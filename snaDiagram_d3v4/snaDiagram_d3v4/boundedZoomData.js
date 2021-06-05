@@ -43,42 +43,41 @@ var nodes = [
 //this is where we connect the nodes with different types of links/edges
 var edges = [
   //FAMILY 1 - Ozone's Crew
-  {id:1,source:'p2',target:'f1',type:'member'},
-  {id:5,source:'f1',target:'p5',type:'member'},
-  {id:5,source:'f1',target:'p6',type:'member'},
-  {id:5,source:'f1',target:'f4',type:'member'},
-  {id:1,source:'p2',target:'f3',type:'tko'},
-  {id:1,source:'p1',target:'p5',type:'partner'},
-  {id:3,source:'p2',target:'p3',type:'ex-partner'},
-  {id:4,source:'p2',target:'p4',type:'friend'},
-  {id:5,source:'p2',target:'p5',type:'tko'},
-  {id:5,source:'f3',target:'p5',type:'tko'},
-  {id:6,source:'p5',target:'p6',type:'mentor'},
-  {id:6,source:'p2',target:'p6',type:'mentor'},
-  {id:6,source:'f3',target:'p3',type:'enemy'},
+  {id:1,source:'p2',target:'f1',type:'member'}, //Ozone and Miracles
+  {id:5,source:'f1',target:'p5',type:'member'}, //Turbo and Miracles
+  {id:5,source:'f1',target:'p6',type:'member'}, //Byron and Miracles
+  //{id:5,source:'f1',target:'f4',type:'member'}, //Miracles and Strobe
+  {id:1,source:'p2',target:'f3',type:'tko'}, //Ozone and Kelly
+  {id:1,source:'p1',target:'p5',type:'partner'}, //Lucia and Turbo
+  {id:3,source:'p2',target:'p3',type:'ex-partner'}, //Ozone and Rhonda
+  {id:4,source:'p2',target:'p4',type:'friend'}, //Ozone and Pop n Taco
+  {id:5,source:'p2',target:'p5',type:'tko'}, //Ozone and Turbo
+  {id:5,source:'f3',target:'p5',type:'tko'}, //Turbo and Kelly
+  {id:6,source:'p5',target:'p6',type:'mentor'}, //Byron and Turbo
+  {id:6,source:'p2',target:'p6',type:'mentor'}, //Byron and Turbo
+  {id:6,source:'f3',target:'p3',type:'enemy'}, //Rhonda and Kelly
 
   //FAMILY 2 - Kelly's Family
-  {id:8,source:'f3',target:'p8',type:'family'},
-  {id:9,source:'f3',target:'p9',type:'family'},
-  {id:9,source:'p8',target:'p9',type:'partner'},
+  {id:8,source:'f3',target:'p8',type:'family'}, //Kelly and Mr. Bennett
+  {id:9,source:'f3',target:'p9',type:'family'}, //Kelly and Mrs. Bennett
+  {id:9,source:'p8',target:'p9',type:'partner'}, //Mr. Bennett and Mrs. Bennett
 
   //FAMILY 3 - Electro-Rock Dancers
-  {id:8,source:'f4',target:'p2',type:'rival'},
-  {id:9,source:'f4',target:'p11',type:'partner'},
-  {id:10,source:'f4',target:'p13',type:'acquaintance'},
-  {id:10,source:'f1',target:'p13',type:'acquaintance'},
-  {id:10,source:'p2',target:'p13',type:'acquaintance'},
-  {id:10,source:'p2',target:'p10',type:'friend'},
-  {id:10,source:'f1',target:'p10',type:'member'},
-  {id:10,source:'p2',target:'p10',type:'friend'},
+  {id:8,source:'f4',target:'p2',type:'rival'}, //Ozone and Strobe
+  {id:9,source:'f4',target:'p11',type:'partner'}, //Strobe and Lollipop
+  //{id:10,source:'f4',target:'p13',type:'acquaintance'}, //Strobe and Radiotron Rapper
+  {id:10,source:'f1',target:'p13',type:'acquaintance'}, //Miracles and Radiotron Rapper
+  //{id:10,source:'p2',target:'p13',type:'acquaintance'}, //Ozone and Radiotron Rapper
+  {id:10,source:'p2',target:'p10',type:'friend'}, //Ozone and Cooley
+  //{id:10,source:'f1',target:'p10',type:'member'}, //Cooley and Miracles
 
   //Family 4 - City Hall people
-  {id:9,source:'f1',target:'p12',type:'enemy'},//miracles / snyder
-  {id:9,source:'p12',target:'f5',type:'friend'},//snyder / douglas
-  {id:10,source:'f5',target:'p14',type:'friend'},//douglas / randall
-  {id:10,source:'p12',target:'p14',type:'friend'},
-  {id:10,source:'f5',target:'f1',type:'enemy'},
-  {id:10,source:'p14',target:'f1',type:'enemy'}
+  //{id:9,source:'f1',target:'p12',type:'enemy'}, //Miracles and Snyder
+  {id:9,source:'p12',target:'f5',type:'friend'}, //Snyder and Douglas
+  {id:10,source:'f5',target:'p14',type:'friend'}, //Douglas and Randall
+  {id:10,source:'p12',target:'p14',type:'friend'}, //Snyder and Randall
+  {id:10,source:'f5',target:'f1',type:'enemy'}, //Douglas and Miracles
+  //{id:10,source:'p14',target:'f1',type:'enemy'} //Randall and Miracles
 
 ]
 
@@ -196,11 +195,12 @@ function familyChart() {
             return "2px"
           }
           //stroke width - thicker if member/friend
-          if(d.type=="member" || d.type =='friend'){
+          else if(d.type=="member" || d.type =='friend'){
             return "3px"
           }
         })
       .attr("stroke", function(d){  //grey unless mentor (yellow), member / acquaintance (orange), or friend (yellow)
+        /*
         if(d.type == 'tko'){
           return "orange"
         } else if(d.type=='partner' || d.type=="rival" || d.type=="ex-partner" || d.type=="acquaintance" || d.type=="enemy"){
@@ -214,6 +214,25 @@ function familyChart() {
         } 
         else {
           return "gray"
+        } */
+        switch (d.type) {
+          case 'tko':
+            return 'orange';
+          case 'mentor':
+            return "yellow";
+          case 'friend':
+            return "yellow";
+          case 'member':
+            return "orange"
+          case 'acquaintance':
+            return "orange"
+          case 'partner':
+            return "pink";
+          case 'enemy':
+            return "red";
+          default:
+            return "gray"
+
         }
       });
 
