@@ -209,20 +209,26 @@ function familyChart() {
           }
         })
       .attr("stroke", function(d){  //grey unless mentor (yellow), member / acquaintance (orange), or friend (yellow)
-        if(d.type == 'tko'){
-          return "orange"
-        } else if(d.type=='partner' || d.type=="rival" || d.type=="ex-partner" || d.type=="acquaintance" || d.type=="enemy"){
-          return "gray"
-        } else if(d.type=='mentor'){
-          return "yellow"
-        } else if(d.type=='member' || d.type=="acquaintance"){
-          return "orange"
-        }else if(d.type=="friend"){
-          return "yellow"
-        } 
-        else {
-          return "gray"
-        }
+        switch (d.type) {
+          case 'tko':
+            return 'orange';
+          case 'mentor':
+            return "yellow";
+          case 'friend':
+            return "yellow";
+          case 'member':
+            return "orange"
+          case 'acquaintance':
+            return "orange"
+          case 'partner':
+            return "pink";
+          case 'enemy':
+            return "red";
+          case 'rival':
+            return "purple";
+          default:
+            return "gray"
+          }
       });
 
     //define tooltip
