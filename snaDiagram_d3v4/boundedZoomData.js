@@ -59,15 +59,16 @@ var edges = [
   {id:6,source:'p5',target:'p6',type:'mentor'}, //Byron and Turbo
   {id:6,source:'p2',target:'p6',type:'mentor'}, //Byron and Turbo
   {id:6,source:'f3',target:'p3',type:'enemy'}, //Rhonda and Kelly
-  {id:10,source:'p7',target:'f1',type:'member'},//Magician and Miracles
-  {id:10,source:'p7',target:'p2',type:'friend'},//Magician and Ozone
-  {id:10,source:'p15',target:'p2',type:'friend'},//Coco and Ozone
-  {id:10,source:'p15',target:'f1',type:'member'},//Coco and Miracles
+  {id:10,source:'p7',target:'f1',type:'member'}, //Magician and Miracles
+  {id:10,source:'p7',target:'p2',type:'friend'}, //Magician and Ozone
+  {id:10,source:'p15',target:'p2',type:'friend'}, //Coco and Ozone
+  {id:10,source:'p15',target:'f1',type:'member'}, //Coco and Miracles
 
   //FAMILY 2 - Kelly's Family
   {id:8,source:'f3',target:'p8',type:'family'}, //Kelly and Mr. Bennett
   {id:9,source:'f3',target:'p9',type:'family'}, //Kelly and Mrs. Bennett
   {id:9,source:'p8',target:'p9',type:'partner'}, //Mr. Bennett and Mrs. Bennett
+  {id:16,source:'f3',target:'p16',type:'enemy'}, //Kelly and Derek
 
   //FAMILY 3 - Electro-Rock Dancers
   {id:8,source:'f4',target:'p2',type:'rival'}, //Ozone and Strobe
