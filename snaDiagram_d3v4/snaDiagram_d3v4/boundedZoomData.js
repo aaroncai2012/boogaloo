@@ -192,7 +192,7 @@ function familyChart() {
             if(d.type == 'partner' || d.type =='mentor' || d.type=="tko" || d.type=="rival"){
               return "4px"
             } else{
-              return "0.5px"
+              return "2px"
             }})
         .attr("stroke-dasharray", function(d){ //dashed if ex or acquaintance
           if(d.type=="ex-partner" || d.type=="acquaintance"){
