@@ -5,17 +5,20 @@ var nodes = [
 
   //Ozone's crew
   {"type":'family',"id":'f1',"name":'Miracles Community Center', "actor": 'Adolfo "Shabba Doo" Quiñones', "group": "TKO Crew", "image":"nodes/miraclesCircle.png"},// Ozone
-  {"type":'person',"id":'p1',"name":'Lucia',"actor": "Sabrina Garcia", "role":"Turbo's Partner","image": "nodes/luciaCircle.png"},
-  {"type":'person',"id":'p2',"name":'Orlando "Ozone" Barco', "actor": 'Adolfo "Shabba Doo" Quiñones', "group": "TKO Crew", "image":"nodes/ozoneCircle.png"},
-  {"type":'person',"id":'p3',"name":'Rhonda',"actor": "Suzie Bono", "role":"Ozone's ex-partner, Kelly's enemy" ,"image": "nodes/rhondaYCircle.png"},
-  {"type":'person',"id":'p4',"name":'Pop n Taco',"actor": "Bruno Falcon", "role":"friend of TKO" ,"image": "nodes/popNTacoCircle.png"},
-  {"type":'person',"id":'p5',"name":'Tony "Turbo" Ainley','actor': 'Michael "Boogaloo Shrimp" Chambers',"group": "TKO Crew","image": "nodes/turboCircle.png"},
-  {"type":'person',"id":'p6',"name":"Byron","actor":'Harry Caesar',"role":'Mentor at Miracles',"image": "nodes/byronCircle.png"},
+  {"type":'person',"id":'p1',"name":'Lucia',"actor": "Sabrina Garcia", "role":"Turbo's Partner","image": "nodes/luciaCircle.png"},//lucia
+  {"type":'person',"id":'p2',"name":'Orlando "Ozone" Barco', "actor": 'Adolfo "Shabba Doo" Quiñones', "group": "TKO Crew", "image":"nodes/ozoneCircle.png"},//ozone
+  {"type":'person',"id":'p3',"name":'Rhonda',"actor": "Suzie Bono", "role":"Ozone's ex-partner, Kelly's enemy" ,"image": "nodes/rhondaYCircle.png"},//rhonda
+  {"type":'person',"id":'p4',"name":'Pop n Taco',"actor": "Bruno Falcon", "role":"friend of TKO" ,"image": "nodes/popNTacoCircle.png"},//pop n taco
+  {"type":'person',"id":'p5',"name":'Tony "Turbo" Ainley','actor': 'Michael "Boogaloo Shrimp" Chambers',"group": "TKO Crew","image": "nodes/turboCircle.png"},//turbo
+  {"type":'person',"id":'p6',"name":"Byron","actor":'Harry Caesar',"role":'Mentor at Miracles',"image": "nodes/byronCircle.png"},//byron
+  {"type":'person',"id":'p7',"name":"Magician","actor":'',"role":'friend of TKO, member of Miracles',"image": "nodes/magicianCircle.png"},//magician
+  {"type":'person',"id":'p15',"name":'Vidal "Coco" Rodriguez',"actor":'',"Vidal Rodriguez":'friend of TKO, member of Miracles',"image": "nodes/cocoCircle.png"},//coco
 
   //Kelly's family
-  {"type":'family',"id":'f3',"name":'Kelly "Special K" Bennett',"actor": "Lucinda Dickey", "group": "TKO Crew","image" : "nodes/kellyCircle.png"},// Nasr
-  {"type":'person',"id":'p8',"name":'Mr. Bennett',"actor": "John Christy Ewing", "role": "Kelly's dad","image": "nodes/mrBennettCircle.png"},
-  {"type":'person',"id":'p9',"name":'Mrs. Bennett',"actor": "Jo de Winter", "role": "Kelly's mom","image": "nodes/msBennettCircle.png"},
+  {"type":'family',"id":'f3',"name":'Kelly "Special K" Bennett',"actor": "Lucinda Dickey", "group": "TKO Crew","image" : "nodes/kellyCircle.png"},// kelly
+  {"type":'person',"id":'p8',"name":'Mr. Bennett',"actor": "John Christy Ewing", "role": "Kelly's dad","image": "nodes/mrBennettCircle.png"}, // mr. bennett
+  {"type":'person',"id":'p9',"name":'Mrs. Bennett',"actor": "Jo de Winter", "role": "Kelly's mom","image": "nodes/msBennettCircle.png"}, // mrs. bennett
+  {"type":'person',"id":'p16',"name":'Derek',"actor": "Nick Segal", "role": "Kelly's fiance and enemy","image": "nodes/derekCircle.png"}, // derek
 
   //Electro Rock Dancers
   {"type":'family',"id":'f4',"name":'Strobe',"actor": 'Steve "Sugarfoot" Notario', "group": "Electro-Rock", "role": "rival of Ozone, supporter of Miracles", "image":"nodes/strobeCircle.png"},
@@ -43,42 +46,47 @@ var nodes = [
 //this is where we connect the nodes with different types of links/edges
 var edges = [
   //FAMILY 1 - Ozone's Crew
-  {id:1,source:'p2',target:'f1',type:'member'},
-  {id:5,source:'f1',target:'p5',type:'member'},
-  {id:5,source:'f1',target:'p6',type:'member'},
-  {id:5,source:'f1',target:'f4',type:'member'},
-  {id:1,source:'p2',target:'f3',type:'tko'},
-  {id:1,source:'p1',target:'p5',type:'partner'},
-  {id:3,source:'p2',target:'p3',type:'ex-partner'},
-  {id:4,source:'p2',target:'p4',type:'friend'},
-  {id:5,source:'p2',target:'p5',type:'tko'},
-  {id:5,source:'f3',target:'p5',type:'tko'},
-  {id:6,source:'p5',target:'p6',type:'mentor'},
-  {id:6,source:'p2',target:'p6',type:'mentor'},
-  {id:6,source:'f3',target:'p3',type:'enemy'},
+  {id:1,source:'f1',target:'p2',type:'member'},//miracles / ozone
+  {id:2,source:'f1',target:'p5',type:'member'},//miracles
+  {id:3,source:'f1',target:'p6',type:'member'},//miracles
+  {id:4,source:'f1',target:'f4',type:'member'},//miracles / strobe
+  {id:5,source:'p2',target:'f3',type:'tko'},//ozone
+  {id:6,source:'p1',target:'p5',type:'partner'},//lucia / turbo
+  {id:7,source:'p2',target:'p3',type:'ex-partner'},//ozone / 
+  {id:8,source:'p2',target:'p4',type:'friend'},//ozone / pop n taco
+  {id:9,source:'p2',target:'p5',type:'tko'},//ozone / turbo
+  {id:12,source:'p2',target:'p6',type:'mentor'},//ozone / 
+  {id:11,source:'p5',target:'p6',type:'mentor'},
+  {id:13,source:'f3',target:'p3',type:'enemy'},
+  {id:10,source:'f3',target:'p5',type:'tko'},
+  {id:10,source:'p7',target:'f1',type:'member'},//magician / miracles
+  {id:10,source:'p7',target:'p2',type:'friend'},//magician / ozone
+  {id:10,source:'p15',target:'p2',type:'friend'},//coco / ozone
+  {id:10,source:'p15',target:'f1',type:'member'},//coco / miracles
 
   //FAMILY 2 - Kelly's Family
   {id:8,source:'f3',target:'p8',type:'family'},
   {id:9,source:'f3',target:'p9',type:'family'},
   {id:9,source:'p8',target:'p9',type:'partner'},
+  {id:16,source:'f3',target:'p16',type:'enemy'},//kelly / derek
 
   //FAMILY 3 - Electro-Rock Dancers
-  {id:8,source:'f4',target:'p2',type:'rival'},
-  {id:9,source:'f4',target:'p11',type:'partner'},
-  {id:10,source:'f4',target:'p13',type:'acquaintance'},
-  {id:10,source:'f1',target:'p13',type:'acquaintance'},
-  {id:10,source:'p2',target:'p13',type:'acquaintance'},
-  {id:10,source:'p2',target:'p10',type:'friend'},
-  {id:10,source:'f1',target:'p10',type:'member'},
-  {id:10,source:'p2',target:'p10',type:'friend'},
+  {id:22,source:'f1',target:'p10',type:'member'},
+  {id:20,source:'f1',target:'p13',type:'acquaintance'},
+  {id:17,source:'f4',target:'p2',type:'rival'}, //strobe / ozone
+  {id:18,source:'f4',target:'p11',type:'partner'},
+  {id:19,source:'f4',target:'p13',type:'acquaintance'},
+  {id:21,source:'p2',target:'p13',type:'acquaintance'},
+  {id:21,source:'p2',target:'p10',type:'friend'},
+  {id:23,source:'p2',target:'p10',type:'friend'},
 
   //Family 4 - City Hall people
-  {id:9,source:'f1',target:'p12',type:'enemy'},//miracles / snyder
-  {id:9,source:'p12',target:'f5',type:'friend'},//snyder / douglas
-  {id:10,source:'f5',target:'p14',type:'friend'},//douglas / randall
-  {id:10,source:'p12',target:'p14',type:'friend'},
-  {id:10,source:'f5',target:'f1',type:'enemy'},
-  {id:10,source:'p14',target:'f1',type:'enemy'}
+  {id:24,source:'f1',target:'p12',type:'enemy'},//miracles / snyder
+  {id:27,source:'f1',target:'f5',type:'enemy'},
+  {id:28,source:'f1',target:'p14',type:'enemy'},
+  {id:26,source:'f5',target:'p14',type:'friend'},//douglas / randall
+  {id:25,source:'f5',target:'p12',type:'friend'},//snyder / douglas
+  {id:26,source:'p12',target:'p14',type:'friend'}
 
 ]
 
@@ -184,7 +192,7 @@ function familyChart() {
             if(d.type == 'partner' || d.type =='mentor' || d.type=="tko" || d.type=="rival"){
               return "4px"
             } else{
-              return "0.5px"
+              return "2px"
             }})
         .attr("stroke-dasharray", function(d){ //dashed if ex or acquaintance
           if(d.type=="ex-partner" || d.type=="acquaintance"){
@@ -201,20 +209,26 @@ function familyChart() {
           }
         })
       .attr("stroke", function(d){  //grey unless mentor (yellow), member / acquaintance (orange), or friend (yellow)
-        if(d.type == 'tko'){
-          return "orange"
-        } else if(d.type=='partner' || d.type=="rival" || d.type=="ex-partner" || d.type=="acquaintance" || d.type=="enemy"){
-          return "gray"
-        } else if(d.type=='mentor'){
-          return "yellow"
-        } else if(d.type=='member' || d.type=="acquaintance"){
-          return "orange"
-        }else if(d.type=="friend"){
-          return "yellow"
-        } 
-        else {
-          return "gray"
-        }
+        switch (d.type) {
+          case 'tko':
+            return 'orange';
+          case 'mentor':
+            return "yellow";
+          case 'friend':
+            return "yellow";
+          case 'member':
+            return "orange"
+          case 'acquaintance':
+            return "orange"
+          case 'partner':
+            return "pink";
+          case 'enemy':
+            return "red";
+          case 'rival':
+            return "purple";
+          default:
+            return "gray"
+          }
       });
 
     //define tooltip
