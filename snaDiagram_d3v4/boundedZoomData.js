@@ -165,6 +165,10 @@ function familyChart() {
     //link distance - repel takes precidence - try upping or lowering the strength and changing the distances
     //collide - this is on maximum strength and is higher for family (bigger radius) than others so should keep
     //families further apart than people 
+
+    // used by link force
+    distance = 100, strength = 1.5;
+
     var simulation = d3.forceSimulation()
                        //.alphaDecay(0.04)
                        //.velocityDecay(0.4)
@@ -172,13 +176,8 @@ function familyChart() {
                        .force("xAxis",d3.forceX(width/2).strength(0.4))
                        .force("yAxis",d3.forceY(height/2).strength(0.6))
                        .force("repelForce",repelForce)
-                       .force("link", d3.forceLink().id(function(d) { return d.id }).distance(dist).strength(1.5))
+                       .force("link", d3.forceLink().id(function(d) { return d.id }).distance(distance).strength(strength))
                        .force("collide",d3.forceCollide().radius(function(d) { return d.r * 20; }).iterations(10).strength(1))
-
-    function dist(d){
-      //used by link force
-      return 100
-    }
 
 //===========need to experiment with different stroke thickness, color and style============
     //define the links
