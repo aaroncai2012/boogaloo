@@ -329,7 +329,7 @@ function familyChart() {
                            .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
                            .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
 
-    edgelabels = svg.selectAll("edgelabel")
+    edgelabels = svg.selectAll(".edgelabel")
                         .data(edges)
                         .enter()
                         .append('text')
