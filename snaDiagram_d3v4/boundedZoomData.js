@@ -329,23 +329,6 @@ function familyChart() {
                            .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
                            .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
 
-    edgelabels = svg.selectAll(".edgelabel")
-                        .data(edges)
-                        .enter()
-                        .append('text')
-                        .style("pointer-events", "none")
-                        .attr('class', 'edgelabel')
-                        .attr('id', function(d, i) {return 'edgelabel' + i})
-                        .attr('font-size', 10)
-                        .attr('fill', '#aaa');
-
-    edgelabels.append('textPath')
-              .attr('xlink:href', function (d, i) {return '#links' + i})
-              .style("text-anchor", "middle")
-              .style("pointer-events", "none")
-              .attr("startOffset", "50%")
-              .text(function(d) {return d.type});
-
     //title case function used by tooltip and labels
     function titleCase(str) {
         str = str.toLowerCase().split(" ");
