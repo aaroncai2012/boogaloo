@@ -245,6 +245,18 @@ function familyChart() {
           }
       });
 
+    // link labels
+    links.append("text")
+         .attr("font-family", "Arial, Helvetica, sans-serif")
+         .attr("fill", "White")
+         .style("font", "normal 40px Arial")
+         .attr("dy", "10em")
+         .attr("dx", "10em")
+         .text(function(d) {
+           console.log(d.type);
+           return d.type;
+         });
+         
     //define tooltip
     var tooltip = d3.select("body")
       .append("div")
@@ -309,8 +321,8 @@ function familyChart() {
                           .on("mouseover", function(d){
             
                             if(d.type == "family" || "person"){
-                              console.log(d.name)
-                              console.log(d.actor)
+                              //console.log(d.name)
+                              //console.log(d.actor)
                               //sets tooltip.  t_text = content in html
                               t_text = "<strong>" + titleCase(d.name) + "</strong><br>Actor: " + d.actor
                               //console.log(d.name)
@@ -363,9 +375,9 @@ function familyChart() {
 
 //display a rect behind labels of names 
 node.filter(function(d) {return (d.name)}).insert("rect","text")
-    .attr("x", function(d){return d.bbox.x-7})
+    .attr("x", function(d){return d.bbox.x-1})
     .attr("y", function(d){return d.bbox.y})
-    .attr("width", function(d){return d.bbox.width+14})
+    .attr("width", function(d){return d.bbox.width+2})
     .attr("height", function(d){return d.bbox.height})
     .attr("class", "rectText")
     .style("fill", "rgba(0, 0, 0, .5)");
