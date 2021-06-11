@@ -246,17 +246,32 @@ function familyChart() {
       });
 
     // link labels
-    links.append("text")
-         .attr("font-family", "Arial, Helvetica, sans-serif")
-         .attr("fill", "White")
-         .style("font", "normal 40px Arial")
-         .attr("dy", "10em")
-         .attr("dx", "10em")
-         .text(function(d) {
-           console.log(d.type);
-           return d.type;
-         });
+    // links.append("text")
+    //      .attr("font-family", "Arial, Helvetica, sans-serif")
+    //      .attr("fill", "White")
+    //      .style("font", "normal 40px Arial")
+    //      .attr("dy", "10em")
+    //      .attr("dx", "10em")
+    //      .text(function(d) {
+    //        console.log(d.type);
+    //        return d.type;
+    //      });
          
+    edgelabels = svg.selectAll(".edgelabel")
+      .data(edges)
+      .enter()
+      .append('text')
+      .style("pointer-events", "none")
+      .attr('class', 'edgelabel')
+      .attr('font-size', 10)
+      .attr('fill', '#aaa')
+      .attr('id', function(d, i) {
+        console.log('edgelabel' + i);
+        return 'edgelabel' + i;
+      })
+
+    edgelabels.append('textPath');
+
     //define tooltip
     var tooltip = d3.select("body")
       .append("div")
