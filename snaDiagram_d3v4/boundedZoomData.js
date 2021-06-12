@@ -49,7 +49,7 @@ var edges = [
   {id:1,source:'f1',target:'p2',type:'member'},//miracles / ozone
   {id:2,source:'f1',target:'p5',type:'member'},//miracles
   {id:3,source:'f1',target:'p6',type:'member'},//miracles
-  {id:4,source:'f1',target:'f4',type:'member'},//miracles / strobe
+  {id:4,source:'f1',target:'f4',type:'acquaintance'},//miracles / strobe
   {id:5,source:'p2',target:'f3',type:'tko'},//ozone
   {id:6,source:'p1',target:'p5',type:'partner'},//lucia / turbo
   {id:7,source:'p2',target:'p3',type:'ex-partner'},//ozone / 
@@ -211,23 +211,23 @@ function familyChart() {
       .attr("stroke", function(d){  //grey unless mentor (yellow), member / acquaintance (orange), or friend (yellow)
         switch (d.type) {
           case 'tko':
-            return 'orange';
+            return '#e15a79';//hot pink
           case 'mentor':
-            return "yellow";
+            return "#f97302";//dark orange 
           case 'friend':
-            return "yellow";
+            return "#f9b002";//dark yellow
           case 'member':
-            return "orange"
+            return "#fb9641";//light orange
           case 'acquaintance':
-            return "orange"
+            return "#fbc441";//light yellow
           case 'partner':
-            return "pink";
+            return "#ff9088";//light pink
           case 'enemy':
-            return "red";
+            return "#83e3fe";//light blue 
           case 'rival':
             return "purple";
           default:
-            return "gray"
+            return "#59d9fe";//dark blue
           }
       });
 
