@@ -246,17 +246,39 @@ function familyChart() {
       });
 
     // link labels
-    // links.append("text")
-    //      .attr("font-family", "Arial, Helvetica, sans-serif")
-    //      .attr("fill", "White")
-    //      .style("font", "normal 40px Arial")
-    //      .attr("dy", "10em")
-    //      .attr("dx", "10em")
-    //      .text(function(d) {
-    //        console.log(d.type);
-    //        return d.type;
-    //      });
+    links.append("text")
+         .attr("font-family", "Arial, Helvetica, sans-serif")
+         .attr("fill", "White")
+         .style("font", "normal 40px Arial")
+         .attr("dy", "10em")
+         .attr("dx", "10em")
+         .text(function(d) {
+           //console.log(d);
+           return d.type;
+         })
+         .attr("transform", function(d) {
+           return "translate(100, 100)";
+         })
+
+    links.append("title")
+      .text(function(d) {
+        //console.log(d);
+        return d.type;
+      })
          
+    edgepaths = svg.selectAll(".edgepath")
+      .data(edges)
+      .enter()
+      .append('path')
+      .attr('class', 'edgepath')
+      .attr('fill-opacity', 0)
+      .attr('stroke-opacity', 0)
+      .attr('id', function(d, i) {return 'edgepath' + i})
+      .style("pointer-events", "none")
+      .text(function(d) {
+        return d.type;
+      })
+
     edgelabels = svg.selectAll(".edgelabel")
       .data(edges)
       .enter()
@@ -266,11 +288,41 @@ function familyChart() {
       .attr('font-size', 10)
       .attr('fill', '#aaa')
       .attr('id', function(d, i) {
-        console.log('edgelabel' + i);
         return 'edgelabel' + i;
       })
+      .text(function(d) {
+        //console.log(d.type);
+        return d.type;
+      });
 
-    edgelabels.append('textPath');
+    edgelabels.append('textPath')
+      .attr('xlink:href', function (d, i) {
+        return '#edgepaths' + i;
+      })
+      .style("text-anchor", "middle")
+      .style("pointer-events", "none")
+      .attr("startOffset", "50%")
+      .text(function (d) {
+        //console.log(d.type);
+        return d.type
+      });
+
+      //console.log(edgelabels);
+      // links.append('text')
+      //   .text(function(d, i) {
+      //     console.log(d);
+      //     return d.type;
+      //   });
+
+      var linkText = svg.selectAll(".gLink")
+        .data(edges)
+        .append("text")
+        .attr("fill", "White")
+        .style("font", "normal 12px Arial")
+        .attr("x", 200)
+        .attr("y", 200)
+        .attr("dy", ".35em")
+        .text(function(d) { return d.type });
 
     //define tooltip
     var tooltip = d3.select("body")
