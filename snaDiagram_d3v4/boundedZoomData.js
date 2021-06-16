@@ -211,23 +211,23 @@ function familyChart() {
       .attr("stroke", function(d){  //grey unless mentor (yellow), member / acquaintance (orange), or friend (yellow)
         switch (d.type) {
           case 'tko':
-            return '#e15a79';//hot pink
+            return '#9b5de5';//Amethyst
           case 'mentor':
-            return "#f97302";//dark orange 
+            return "#554348";//Dark Liver
           case 'friend':
-            return "#f9b002";//dark yellow
+            return "#00bbf9";//Capri
           case 'member':
-            return "#fb9641";//light orange
+            return "#fee440";//Minion Yellow
           case 'acquaintance':
-            return "#fbc441";//light yellow
+            return "#00bbf9";//Capri
           case 'partner':
-            return "#ff9088";//light pink
+            return "#f15bb5";//Magenta Crayola
           case 'enemy':
-            return "#83e3fe";//light blue 
+            return "#ff1d15";//Red RYB 
           case 'rival':
-            return "purple";
+            return "2b193d" //dark purple;
             case 'family':
-            return "#24cbfb";//darker blue
+            return "#00f5d4";//Sea Green Crayola
           default:
             return "gray";//#59d9fe dark blue, #32cffc darker
           }
