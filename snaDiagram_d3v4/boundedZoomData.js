@@ -226,8 +226,10 @@ function familyChart() {
             return "#83e3fe";//light blue 
           case 'rival':
             return "purple";
+            case 'family':
+            return "#24cbfb";//darker blue
           default:
-            return "#59d9fe";//dark blue
+            return "gray";//#59d9fe dark blue, #32cffc darker
           }
       });
 
