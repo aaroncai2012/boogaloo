@@ -225,8 +225,8 @@ function familyChart() {
           case 'enemy':
             return "#ff1d15";//Red RYB 
           case 'rival':
-            return "2b193d" //dark purple;
-            case 'family':
+            return "#f1dede" //misty rose
+          case 'family':
             return "#00f5d4";//Sea Green Crayola
           default:
             return "gray";//#59d9fe dark blue, #32cffc darker
