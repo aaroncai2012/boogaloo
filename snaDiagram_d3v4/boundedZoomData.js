@@ -227,7 +227,7 @@ function familyChart() {
           case 'rival':
             return "purple";
             case 'family':
-            return "#24cbfb";//darker blue
+            return "#00f5d4";//sea green crayola
           default:
             return "gray";//#59d9fe dark blue, #32cffc darker
           }
