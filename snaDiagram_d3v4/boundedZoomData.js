@@ -217,25 +217,25 @@ function familyChart() {
       .attr("stroke", function(d){  //grey unless mentor (yellow), member / acquaintance (orange), or friend (yellow)
         switch (d.type) {
           case 'tko':
-            return '#a82d34';//bright red
+            return '#f8f8f2';//red
           case 'friend':
-            return "#e15a79";//hot pink 
+            return "#ff3366";//pink 
           case 'member':
-            return "#fbc441";//light yellow
+            return "#e7db74";//yellow
           case 'mentor':
-            return "#f97302";//dark orange
+            return "#fd9621";//orange
           case 'acquaintance':
-            return "#660099";//#fbc441 light yellow
+            return "blue";//#fbc441 light yellow
           case 'partner':
-            return "#ff9088";//light pink
+            return "#a82d34";//white 
           case 'enemy':
-            return "#83e3fe";//light blue 
+            return "#66ccff";//blue 
           case 'rival':
-            return "#9999ff";//purple
+            return "#ac80ff";//purple
             case 'family':
-            return '#99ff00';//bright green, "#00f5d4" sea green crayola  
+            return '#a6e22c';//green 
           default:
-            return "gray";//#59d9fe dark blue, #32cffc darker
+            return "#666666";//#beige/gray
           }
       });
 
