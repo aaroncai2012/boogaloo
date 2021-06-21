@@ -19,6 +19,8 @@ var nodes = [
   {"type":'person',"id":'p8',"name":'Mr. Bennett',"actor": "John Christy Ewing", "role": "Kelly's dad","image": "nodes/mrBennettCircle.png"}, // mr. bennett
   {"type":'person',"id":'p9',"name":'Mrs. Bennett',"actor": "Jo de Winter", "role": "Kelly's mom","image": "nodes/msBennettCircle.png"}, // mrs. bennett
   {"type":'person',"id":'p16',"name":'Derek',"actor": "Nick Segal", "role": "Kelly's fiance and enemy","image": "nodes/derekCircle.png"}, // derek
+  {"type":'person',"id":'p19',"name":'Rosa',"actor": "Alberta Sanchez", "role": "maid for the Bennett's, friend of Kelly","image": "nodes/rosaCircle.png"}, // rosa
+
 
   //Electro Rock Dancers
   {"type":'family',"id":'f4',"name":'Strobe',"actor": 'Steve "Sugarfoot" Notario', "group": "Electro-Rock", "role": "rival of Ozone, supporter of Miracles", "image":"nodes/strobeCircle.png"},
@@ -29,9 +31,9 @@ var nodes = [
   //Enemies
   {"type":'family',"id":'f5',"name":'Mr. Douglas', "actor": "Peter MacLean", "role":"enemy of TKO, Miracles, works with Randall", "image":"nodes/douglasCircle.png"},
   {"type":'person',"id":'p12',"name":'Mrs. Snyder',"actor": "Sandy Lipton", "role": "city official, sympathetic yet an enemy to Miracles","image": "nodes/snyderCircle.png"},
-  {"type":'person',"id":'p14',"name":'Randall',"actor": "Ken Olfson","role":'wants to develop Miracles, working with Mr. Douglas',"image": "nodes/randallCircle.png"}
-
-
+  {"type":'person',"id":'p14',"name":'Randall',"actor": "Ken Olfson","role":'wants to develop Miracles, working with Mr. Douglas',"image": "nodes/randallCircle.png"},
+  {"type":'person',"id":'p17',"name":'Surveyor',"actor": "Daniel Riordan","role":'works for Randall and Mr. Douglas',"image": "nodes/surveyorCircle.png"},
+  {"type":'person',"id":'p18',"name":'Bulldozer Driver',"actor": "Jim W. Jones","role":'works for Randall and Mr. Douglas',"image": "nodes/bulldozerDriverCircle.png"}
 ]
 
 //currently there are 10 types of links
@@ -69,6 +71,9 @@ var edges = [
   {id:9,source:'f3',target:'p9',type:'family'},
   {id:9,source:'p8',target:'p9',type:'partner'},
   {id:16,source:'f3',target:'p16',type:'enemy'},//kelly / derek
+  {id:16,source:'f3',target:'p19',type:'friend'},//kelly / rosa
+  {id:16,source:'p8',target:'p19',type:'employee'},//mr. bennett / rosa
+  {id:16,source:'p9',target:'p19',type:'employee'},//ms. bennett / rosa
 
   //FAMILY 3 - Electro-Rock Dancers
   {id:22,source:'f1',target:'p10',type:'member'},
@@ -85,9 +90,12 @@ var edges = [
   {id:27,source:'f1',target:'f5',type:'enemy'},
   {id:28,source:'f1',target:'p14',type:'enemy'},
   {id:26,source:'f5',target:'p14',type:'friend'},//douglas / randall
-  {id:25,source:'f5',target:'p12',type:'friend'},//snyder / douglas
-  {id:26,source:'p12',target:'p14',type:'friend'}
-
+  {id:25,source:'f5',target:'p12',type:'friend'},//douglas / snyder 
+  {id:26,source:'p12',target:'p14',type:'friend'},
+  {id:26,source:'p17',target:'p14',type:'employee'},//surveyor / randall
+  {id:26,source:'p17',target:'f5',type:'employee'},//surveyor / douglas
+  {id:26,source:'p18',target:'p14',type:'employee'},//bulldozer / randall
+  {id:26,source:'p18',target:'f5',type:'employee'}//bulldozer / douglas
 ]
 
 //defining the chart
@@ -167,9 +175,9 @@ function familyChart() {
     //collide - this is on maximum strength and is higher for family (bigger radius) than others so should keep
     //families further apart than people 
     var simulation = d3.forceSimulation()
-                       //.alphaDecay(0.04)
+                       //.alphaDecay(0.1)//bounce
                        //.velocityDecay(0.4)
-                       //.force("center", d3.forceCenter(width / 2, height / 2))
+                       .force("center", d3.forceCenter(width / 2, height / 2))//center on screen
                        .force("xAxis",d3.forceX(width/2).strength(0.4))
                        .force("yAxis",d3.forceY(height/2).strength(0.6))
                        .force("repelForce",repelForce)
