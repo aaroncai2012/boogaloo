@@ -189,45 +189,51 @@ function familyChart() {
         .append("line")
         .attr("stroke-width",function(d){
           //stroke width - thicker if partner/mentor/tko/rival
-            if(d.type == 'partner' || d.type =='mentor' || d.type=="tko" || d.type=="rival"){
-              return "4px"
+            if(d.type == 'partner' || d.type =='mentor' || d.type=="tko" || d.type=='rival'){
+              return "5px"
             } else{
               return "2px"
             }})
         .attr("stroke-dasharray", function(d){ //dashed if ex or acquaintance
           if(d.type=="ex-partner" || d.type=="acquaintance"){
             return "6,6"
-          } else{
+          } else if(d.type=="member"){
+            return "2,1"
+          }
+          else if(d.type=="family"){
+            return "2,2"
+          }
+          else{
             return "0"
           }
           if(d.type=="enemy"){
             return "2px"
           }
           //stroke width - thicker if member/friend
-          if(d.type=="member" || d.type =='friend'){
+          if(d.type=="member" || d.type =='friend' || d.type=='rival'){
             return "3px"
           }
         })
       .attr("stroke", function(d){  //grey unless mentor (yellow), member / acquaintance (orange), or friend (yellow)
         switch (d.type) {
           case 'tko':
-            return '#e15a79';//hot pink
-          case 'mentor':
-            return "#f97302";//dark orange 
+            return '#a82d34';//bright red
           case 'friend':
-            return "#f9b002";//dark yellow
+            return "#e15a79";//hot pink 
           case 'member':
-            return "#fb9641";//light orange
-          case 'acquaintance':
             return "#fbc441";//light yellow
+          case 'mentor':
+            return "#f97302";//dark orange
+          case 'acquaintance':
+            return "#660099";//#fbc441 light yellow
           case 'partner':
             return "#ff9088";//light pink
           case 'enemy':
             return "#83e3fe";//light blue 
           case 'rival':
-            return "purple";
+            return "#9999ff";//purple
             case 'family':
-            return "#00f5d4";//sea green crayola
+            return '#99ff00';//bright green, "#00f5d4" sea green crayola  
           default:
             return "gray";//#59d9fe dark blue, #32cffc darker
           }
