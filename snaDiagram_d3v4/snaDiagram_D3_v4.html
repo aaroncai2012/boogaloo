@@ -19,11 +19,33 @@
     /*background-color: #161616;*/
     background-image: url(Endless-Constellation.svg);
   }
+  button{
+  position: absolute;
+  z-index: 3;
+  background: white;
+  width: 10%;
+  left: 60px;
+  top: 3em;
+  }
+
+  img {
+  max-width: 150%;
+  height: auto;
+  position: absolute;
+  z-index: 3;
+  width: 15%;
+  right: 60px;
+  top: 3em;
+}
 
  </style>
   </head>
   <body>
     <div id= "forces" id="container" class="svg-container"></div>
+    
+    <button onClick="window.location.reload();">Refresh Page</button>
+    
+    <img src="nodes/snaLegend.png" alt="Social Network Legend">
     
     <script src="boundedZoomData.js"></script>
   </body>
