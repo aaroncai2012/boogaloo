@@ -13,6 +13,10 @@ var nodes = [
   {"type":'person',"id":'p6',"name":"Byron","actor":'Harry Caesar',"role":'Mentor at Miracles',"image": "nodes/byronCircle.png"},//byron
   {"type":'person',"id":'p7',"name":"Magician","actor":'',"role":'friend of TKO, member of Miracles',"image": "nodes/magicianCircle.png"},//magician
   {"type":'person',"id":'p15',"name":'Coco',"actor":'Vidal "Coco" Rodriguez', "role": 'friend of TKO, member of Miracles',"image": "nodes/cocoCircle.png"},//coco
+  {"type":'person',"id":'p21',"name":'Reporter Howard Howard',"actor":'William Cort', "role": 'enemy of Randall and Douglas, supporter of Miracles',"image": "nodes/howardCircle.png"},//howard howard
+
+  //Nurse
+  {"type":'person',"id":'p20',"name":'Head Nurse (Doreen Shay)',"actor":'Lu Leonard', "role": 'caretaker and enemy of Turbo',"image": "nodes/headNurseCircle.png"},//head nurse
 
   //Kelly's family
   {"type":'family',"id":'f3',"name":'Kelly "Special K" Bennett',"actor": "Lucinda Dickey", "group": "TKO Crew","image" : "nodes/kellyCircle.png"},// kelly
@@ -65,6 +69,12 @@ var edges = [
   {id:10,source:'p7',target:'p2',type:'friend'},//magician / ozone
   {id:10,source:'p15',target:'p2',type:'friend'},//coco / ozone
   {id:10,source:'p15',target:'f1',type:'member'},//coco / miracles
+  {id:10,source:'p21',target:'f1',type:'acquaintance'},//howard / miracles
+  {id:10,source:'p21',target:'p14',type:'enemy'},//howard / randall
+  {id:10,source:'p21',target:'f5',type:'enemy'},//howard / douglas
+
+  //NURSES
+  {id:9,source:'p20',target:'p5',type:'enemy'},//nurse / turbo
 
   //FAMILY 2 - Kelly's Family
   {id:8,source:'f3',target:'p8',type:'family'},
@@ -336,9 +346,13 @@ function familyChart() {
     function titleCase(str) {
         str = str.toLowerCase().split(" ");
         for (var i = 0; i < str.length; i++) {
-          if(str[i].charAt(0) == '"') {
+          if(str[i].charAt(0) == '"' ) {
             //console.log(str[i].charAt(1))
             str[i] = '"'+ str[i].charAt(1).toUpperCase() + str[i].slice(2);
+          }
+          else if(str[i].charAt(0) == '(' ) {
+            //console.log(str[i].charAt(1))
+            str[i] = '('+ str[i].charAt(1).toUpperCase() + str[i].slice(2);
           }
             else{
             str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
