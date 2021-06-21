@@ -186,7 +186,7 @@ function familyChart() {
 
     function dist(d){
       //used by link force
-      return 100
+      return 150
     }
 
 //===========need to experiment with different stroke thickness, color and style============
