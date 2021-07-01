@@ -4,7 +4,7 @@
 var nodes = [
 
   //Ozone's crew
-  {"type":'family',"id":'f1',"name":'Miracles Community Center', "actor": 'Adolfo "Shabba Doo" Quiñones', "group": "TKO Crew", "image":"nodes/miraclesCircle.png"},// Ozone
+  {"type":'family',"id":'f1',"name":'Miracles Community Center', "image":"nodes/miraclesCircle.png"},// miracles
   {"type":'person',"id":'p1',"name":'Lucia',"actor": "Sabrina Garcia", "role":"Turbo's Partner","image": "nodes/luciaCircle.png"},//lucia
   {"type":'person',"id":'p2',"name":'Orlando "Ozone" Barco', "actor": 'Adolfo "Shabba Doo" Quiñones', "group": "TKO Crew", "image":"nodes/ozoneCircle.png"},//ozone
   {"type":'person',"id":'p3',"name":'Rhonda',"actor": "Suzie Bono", "role":"Ozone's ex-partner, Kelly's enemy" ,"image": "nodes/rhondaYCircle.png"},//rhonda
@@ -52,60 +52,242 @@ var nodes = [
 //this is where we connect the nodes with different types of links/edges
 var edges = [
   //FAMILY 1 - Ozone's Crew
-  {id:1,source:'f1',target:'p2',type:'member'},//miracles / ozone
-  {id:2,source:'f1',target:'p5',type:'member'},//miracles
-  {id:3,source:'f1',target:'p6',type:'member'},//miracles
-  {id:4,source:'f1',target:'f4',type:'acquaintance'},//miracles / strobe
-  {id:5,source:'p2',target:'f3',type:'tko'},//ozone
-  {id:6,source:'p1',target:'p5',type:'partner'},//lucia / turbo
-  {id:7,source:'p2',target:'p3',type:'ex-partner'},//ozone / 
-  {id:8,source:'p2',target:'p4',type:'friend'},//ozone / pop n taco
-  {id:9,source:'p2',target:'p5',type:'tko'},//ozone / turbo
-  {id:12,source:'p2',target:'p6',type:'mentor'},//ozone / 
-  {id:11,source:'p5',target:'p6',type:'mentor'},
-  {id:13,source:'f3',target:'p3',type:'enemy'},
-  {id:10,source:'f3',target:'p5',type:'tko'},
-  {id:10,source:'p7',target:'f1',type:'member'},//magician / miracles
-  {id:10,source:'p7',target:'p2',type:'friend'},//magician / ozone
-  {id:10,source:'p15',target:'p2',type:'friend'},//coco / ozone
-  {id:10,source:'p15',target:'f1',type:'member'},//coco / miracles
-  {id:10,source:'p21',target:'f1',type:'acquaintance'},//howard / miracles
-  {id:10,source:'p21',target:'p14',type:'enemy'},//howard / randall
-  {id:10,source:'p21',target:'f5',type:'enemy'},//howard / douglas
+  {id:1,source:'p5',target:'f4',type:'1'},//turbo / strobe
+  {id:2,source:'p2',target:'f3',type:'10'},//ozone / kelly
+  {id:3,source:'f3',target:'p10',type:'3'},//kelly / cooley
+  {id:4,source:'f3',target:'p7',type:'3'},//kelly / magician
+  {id:5,source:'f3',target:'p3',type:'3'},//kelly / rhonda
+  {id:6,source:'p1',target:'p5',type:'5'},//lucia / turbo
+  {id:7,source:'p1',target:'p2',type:'4'},//lucia / ozone
+  {id:8,source:'p1',target:'f3',type:'2'},//lucia / kelly
+  {id:9,source:'p1',target:'p4',type:'2'},//lucia / pop n taco
+  {id:10,source:'p1',target:'p3',type:'2'},//lucia / rhonda
+  {id:11,source:'p1',target:'f4',type:'1'},//lucia / strobe
+  {id:12,source:'p1',target:'p14',type:'1'},//lucia / randall
+  {id:13,source:'p1',target:'p14',type:'1'},//lucia / mr. douglas
+  {id:14,source:'p1',target:'p6',type:'1'},//lucia / byron
+  {id:15,source:'p5',target:'p3',type:'4'},//turbo / rhonda
+  {id:16,source:'p2',target:'p3',type:'9'},//ozone / rhonda
+  {id:17,source:'p2',target:'p4',type:'6'},//ozone / pop n taco
+  {id:18,source:'p15',target:'p4',type:'6'},//coco / pop n taco
+  {id:19,source:'f3',target:'p4',type:'3'},//kelly / pop n taco
+  {id:20,source:'p5',target:'p4',type:'3'},//turbo / pop n taco
+  {id:21,source:'p5',target:'p10',type:'3'},//cooley / pop n taco
+  {id:22,source:'p3',target:'p10',type:'3'},//rhonda / pop n taco
+  {id:23,source:'p7',target:'p10',type:'2'},//magician / pop n taco
+  {id:24,source:'p14',target:'p10',type:'2'},//randall / pop n taco
+  {id:25,source:'f4',target:'p10',type:'2'},//strobe / pop n taco
+  {id:26,source:'p14',target:'p10',type:'2'},//douglas / pop n taco
+  {id:27,source:'p19',target:'p10',type:'2'},//rosa / pop n taco
+  {id:28,source:'p13',target:'p10',type:'1'},//radiotron rapper / pop n taco
+  {id:29,source:'p6',target:'p10',type:'1'},//byron / pop n taco
+  {id:30,source:'p9',target:'p10',type:'1'},//mrs. bennett / pop n taco
+  {id:31,source:'p17',target:'p10',type:'1'},//surveyor / pop n taco
+  {id:32,source:'p16',target:'p10',type:'1'},//derek / pop n taco
+  {id:33,source:'p21',target:'p10',type:'1'},//howard / pop n taco
+  {id:34,source:'p2',target:'p5',type:'10'},//ozone / turbo
+  {id:35,source:'p2',target:'p6',type:'8'},//ozone / byron
+  {id:36,source:'p3',target:'p6',type:'4'},//rhonda / byron
+  {id:37,source:'p14',target:'p6',type:'2'},//randall / byron
+  {id:38,source:'p7',target:'p6',type:'4'},//magician / byron
+  {id:39,source:'p7',target:'p14',type:'2'},//magician / randall
+  {id:40,source:'p7',target:'p14',type:'3'},//magician / douglas
+  {id:41,source:'p7',target:'p15',type:'4'},//magician / coco
+  {id:42,source:'p7',target:'p1',type:'4'},//magician / lucia
+  {id:43,source:'f3',target:'p5',type:'8'},//kelly / turbo
+  {id:44,source:'p7',target:'p3',type:'6'},//magician / rhonda
+  {id:45,source:'p7',target:'p2',type:'9'},//magician / ozone
+  {id:46,source:'p7',target:'p5',type:'8'},//magician / turbo
+  {id:47,source:'p7',target:'p19',type:'1'},//magician / rosa
+  {id:48,source:'p7',target:'f4',type:'1'},//magician / strobe
+  {id:49,source:'p7',target:'p21',type:'1'},//magician / howard
+  {id:50,source:'p15',target:'p2',type:'7'},//coco / ozone
+  {id:51,source:'p15',target:'p3',type:'4'},//coco / rhonda
+  {id:52,source:'p21',target:'p15',type:'1'},//howard / coco
+  {id:53,source:'p21',target:'p2',type:'1'},//howard / ozone
+  {id:54,source:'p21',target:'p14',type:'3'},//howard / randall
+  {id:55,source:'p21',target:'f5',type:'1'},//howard / douglas
+  {id:56,source:'p21',target:'p5',type:'1'},//howard / turbo
+  {id:57,source:'p9',target:'p21',type:'1'},//mrs. bennett / howard
+  {id:58,source:'p2',target:'p14',type:'6'},//ozone / randall
+  {id:59,source:'p15',target:'p14',type:'1'},//coco / randall
+  {id:60,source:'p15',target:'p5',type:'5'},//coco / turbo
+  {id:61,source:'p15',target:'f3',type:'2'},//coco / kelly
+  {id:62,source:'p15',target:'p10',type:'5'},//coco / cooley
+  {id:63,source:'p5',target:'p10',type:'4'},//turbo / cooley
+  {id:64,source:'p3',target:'p10',type:'4'},//rhonda / cooley
+  {id:65,source:'p3',target:'f4',type:'1'},//rhonda / strobe
+  {id:66,source:'p15',target:'p1',type:'2'},//coco / lucia
+  {id:67,source:'p7',target:'p10',type:'3'},//magician / cooley
+  {id:68,source:'p1',target:'p10',type:'2'},//lucia / cooley
+  {id:69,source:'p6',target:'p10',type:'2'},//byron / cooley
+  {id:70,source:'p5',target:'p19',type:'2'},//turbo / rosa
+  {id:71,source:'p2',target:'p19',type:'2'},//ozone / rosa
+  {id:72,source:'p19',target:'p3',type:'1'},//rosa / rhonda
+  {id:73,source:'p2',target:'p13',type:'2'},//ozone / radiotron rapper
+  {id:74,source:'p10',target:'p13',type:'1'},//cooley / radiotron rapper
+  {id:75,source:'p7',target:'p13',type:'1'},//magician / radiotron rapper
+  {id:76,source:'p3',target:'p13',type:'1'},//rhonda / radiotron rapper
+  {id:77,source:'p6',target:'p13',type:'1'},//byron / radiotron rapper
+  {id:78,source:'p10',target:'f4',type:'1'},//cooley / strobe
+  {id:79,source:'p10',target:'p14',type:'1'},//cooley / randall
+  {id:80,source:'p10',target:'p19',type:'1'},//cooley / rosa
+  {id:81,source:'p10',target:'p8',type:'1'},//cooley / mr. bennett
+  {id:82,source:'p10',target:'p9',type:'1'},//cooley / mrs. bennett
+  {id:83,source:'p10',target:'p17',type:'1'},//cooley / surveyor
+  {id:84,source:'p10',target:'p12',type:'1'},//cooley / snyder
+  {id:85,source:'p10',target:'p21',type:'1'},//cooley / howard
+  {id:86,source:'p6',target:'p5',type:'2'},//byron / turbo
+  {id:87,source:'p6',target:'p15',type:'2'},//byron / coco
+  {id:88,source:'p6',target:'f3',type:'1'},//byron / kelly
+  {id:89,source:'p6',target:'f4',type:'1'},//byron / strobe
+  {id:90,source:'p15',target:'p13',type:'1'},//coco / radiotron rapper
+  {id:91,source:'p5',target:'p13',type:'1'},//turbo / radiotron rapper
+  {id:92,source:'f3',target:'p13',type:'1'},//kelly / radiotron rapper
+  {id:93,source:'p1',target:'p13',type:'1'},//lucia / radiotron rapper
+  {id:94,source:'f5',target:'p13',type:'1'},//douglas / radiotron rapper
+  {id:95,source:'p19',target:'p13',type:'1'},//rosa / radiotron rapper
+  {id:96,source:'p9',target:'p13',type:'1'},//mrs. bennett / radiotron rapper
+  {id:97,source:'p17',target:'p13',type:'1'},//surveyor / radiotron rapper
+  {id:98,source:'p13',target:'p14',type:'1'},//radiotron rapper / randall
+  {id:99,source:'p13',target:'p8',type:'1'},//radiotron rapper / mr. bennett
+  {id:100,source:'p13',target:'f4',type:'1'},//radiotron rapper / strobe
+  {id:101,source:'p1',target:'p19',type:'1'},//lucia / rosa
+  {id:102,source:'p15',target:'p19',type:'1'},//coco / rosa
+  {id:103,source:'p6',target:'p19',type:'1'},//byron / rosa
+  {id:104,source:'p6',target:'p9',type:'1'},//byron / mrs. bennett
+  {id:105,source:'p6',target:'p21',type:'1'},//byron / howard
+  {id:106,source:'p1',target:'p21',type:'1'},//lucia / howard
+  {id:107,source:'p15',target:'p8',type:'1'},//coco / mr. bennett
+  {id:108,source:'p1',target:'p8',type:'1'},//lucia / mr. bennett
+  {id:109,source:'p17',target:'p1',type:'1'},//surveyor / lucia
+  {id:110,source:'p15',target:'p9',type:'1'},//coco / mrs. bennett
+  {id:111,source:'p17',target:'p2',type:'1'},//surveyor / ozone
+  {id:112,source:'p17',target:'p7',type:'1'},//surveyor / magician
+  {id:113,source:'p17',target:'p5',type:'1'},//surveyor / turbo
+  {id:114,source:'p17',target:'p6',type:'1'},//surveyor / byron
+  {id:115,source:'p17',target:'p3',type:'1'},//surveyor / rhonda
+  {id:116,source:'p17',target:'p19',type:'1'},//surveyor / rosa
+
+  //miracles
+  {id:117,source:'p16',target:'f1',type:'3'},//derek / miracles
+  {id:118,source:'p13',target:'f1',type:'3'},//radiotron rapper / miracles
+  {id:119,source:'p20',target:'f1',type:'3'},//head nurse / miracles
+  {id:120,source:'p15',target:'f1',type:'10'},//coco / miracles
+  {id:121,source:'p10',target:'f1',type:'9'},//cooley / miracles
+  {id:122,source:'f3',target:'f1',type:'9'},//kelly / miracles
+  {id:123,source:'p1',target:'f1',type:'9'},//lucia / miracles
+  {id:124,source:'p7',target:'f1',type:'8'},//magician / miracles
+  {id:125,source:'f5',target:'f1',type:'8'},//douglas / miracles
+  {id:126,source:'p12',target:'f1',type:'8'},//snyder / miracles
+  {id:127,source:'f1',target:'p2',type:'10'},//miracles / ozone
+  {id:128,source:'f1',target:'p10',type:'8'},//miracles / pop n taco
+  {id:129,source:'f1',target:'p14',type:'6'},//miracles / randall
+  {id:130,source:'f1',target:'p21',type:'4'},//miracles / howard
+  {id:131,source:'f1',target:'p3',type:'8'},//miracles / rhonda
+  {id:132,source:'f1',target:'p19',type:'6'},//miracles / rosa
+  {id:133,source:'f1',target:'p5',type:'9'},//miracles / turbo
+  {id:134,source:'f1',target:'p6',type:'7'},//miracles / byron
+  {id:135,source:'f1',target:'f4',type:'5'},//miracles / strobe
+  {id:136,source:'f1',target:'p17',type:'5'},//miracles / surveyor
+
 
   //NURSES
-  {id:9,source:'p20',target:'p5',type:'enemy'},//nurse / turbo
+  {id:137,source:'p20',target:'p5',type:'1'},//head nurse / turbo
+  {id:138,source:'p20',target:'p2',type:'1'},//head nurse / ozone
+  {id:139,source:'p20',target:'f3',type:'1'},//head nurse / kelly
+  {id:140,source:'p15',target:'p20',type:'1'},//coco / head nurse
+  {id:142,source:'p1',target:'p20',type:'1'},//lucia / head nurse
+  {id:143,source:'p20',target:'p7',type:'1'},//head nurse / magician
+  {id:144,source:'p20',target:'p9',type:'1'},//head nurse / mrs. bennett
+  {id:145,source:'p20',target:'p14',type:'1'},//head nurse / randall
+  {id:146,source:'p20',target:'p10',type:'1'},//head nurse / cooley
+  {id:147,source:'p20',target:'p19',type:'1'},//head nurse / rosa
+  {id:148,source:'p20',target:'p10',type:'1'},//head nurse / pop n taco
+  {id:149,source:'p12',target:'p20',type:'1'},//snyder / head nurse
+  {id:150,source:'p17',target:'p20',type:'1'},//surveyor / head nurse
 
   //FAMILY 2 - Kelly's Family
-  {id:8,source:'f3',target:'p8',type:'family'},
-  {id:9,source:'f3',target:'p9',type:'family'},
-  {id:9,source:'p8',target:'p9',type:'partner'},
-  {id:16,source:'f3',target:'p16',type:'enemy'},//kelly / derek
-  {id:16,source:'f3',target:'p19',type:'friend'},//kelly / rosa
-  {id:16,source:'p8',target:'p19',type:'employee'},//mr. bennett / rosa
-  {id:16,source:'p9',target:'p19',type:'employee'},//ms. bennett / rosa
+  {id:151,source:'f3',target:'p8',type:'1'},//kelly / mr. bennett
+  {id:152,source:'f3',target:'p9',type:'3'},//kelly / mrs. bennett
+  {id:153,source:'f3',target:'p14',type:'1'},//kelly / randall
+  {id:154,source:'f3',target:'p12',type:'1'},//kelly / snyder
+  {id:155,source:'p8',target:'p9',type:'6'},//mr. bennett / mrs. bennett
+  {id:156,source:'p8',target:'p16',type:'2'},//mr. bennett / derek
+  {id:157,source:'p8',target:'p21',type:'2'},//mr. bennett / howard
+  {id:158,source:'p9',target:'p16',type:'1'},//mrs. bennett / derek
+  {id:159,source:'p15',target:'p16',type:'1'},//coco / derek
+  {id:160,source:'p10',target:'p16',type:'1'},//cooley / derek
+  {id:161,source:'p7',target:'p16',type:'1'},//magician / derek
+
+  {id:162,source:'p7',target:'p16',type:'1'},//magician / mrs. bennett
+  {id:163,source:'p7',target:'p8',type:'1'},//magician / mr. bennett
+  {id:164,source:'p8',target:'p5',type:'2'},//mr. bennett / turbo
+  {id:165,source:'p8',target:'p10',type:'2'},//mr. bennett / pop n taco
+  {id:166,source:'p8',target:'p2',type:'1'},//mr. bennett / ozone
+  {id:167,source:'p3',target:'p8',type:'1'},//rhonda / mr. bennett
+  {id:168,source:'p5',target:'p16',type:'1'},//turbo / derek
+  {id:169,source:'p9',target:'p2',type:'1'},//ms. bennett / ozone
+  {id:170,source:'f3',target:'p16',type:'1'},//kelly / derek
+  {id:171,source:'p2',target:'p16',type:'1'},//ozone / derek
+  {id:172,source:'f3',target:'p19',type:'1'},//kelly / rosa
+  {id:173,source:'p8',target:'p19',type:'1'},//mr. bennett / rosa
+  {id:174,source:'p8',target:'p14',type:'1'},//mr. bennett / randall
+  {id:175,source:'p8',target:'f4',type:'1'},//mr. bennett / strobe
+  {id:176,source:'p8',target:'p17',type:'1'},//mr. bennett / surveyor
+  {id:177,source:'p5',target:'p9',type:'1'},//turbo / mrs. bennett
+  {id:178,source:'p14',target:'p9',type:'1'},//randall / mrs. bennett
+  {id:179,source:'p9',target:'p19',type:'1'},//mrs. bennett / rosa
+  {id:180,source:'p19',target:'p14',type:'1'},//rosa / randall
+  {id:181,source:'f4',target:'p14',type:'1'},//strobe / randall
+  {id:182,source:'f4',target:'p9',type:'1'},//strobe / mrs. bennett
+  {id:183,source:'f4',target:'f5',type:'1'},//strobe / douglas
+  {id:184,source:'f4',target:'p19',type:'1'},//strobe / rosa
+  {id:185,source:'p16',target:'p19',type:'1'},//derek / rosa
+  {id:186,source:'p16',target:'p1',type:'1'},//derek / lucia
+  {id:187,source:'p16',target:'p14',type:'1'},//derek / randall
+  {id:188,source:'p16',target:'p6',type:'1'},//derek / byron
 
   //FAMILY 3 - Electro-Rock Dancers
-  {id:22,source:'f1',target:'p10',type:'member'},
-  {id:20,source:'f1',target:'p13',type:'acquaintance'},
-  {id:17,source:'f4',target:'p2',type:'rival'}, //strobe / ozone
-  {id:18,source:'f4',target:'p11',type:'partner'},
-  {id:19,source:'f4',target:'p13',type:'acquaintance'},
-  {id:21,source:'p2',target:'p13',type:'acquaintance'},
-  {id:21,source:'p2',target:'p10',type:'friend'},
-  {id:23,source:'p2',target:'p10',type:'friend'},
+  {id:189,source:'f4',target:'p2',type:'2'}, //strobe / ozone
+  {id:190,source:'f4',target:'p15',type:'1'}, //strobe / coco
+  {id:191,source:'f4',target:'f3',type:'1'}, //strobe / kelly
+  {id:192,source:'f4',target:'p11',type:'3'},//strobe / electro rock 2
+  {id:193,source:'p2',target:'p10',type:'7'},//ozone / cooley
+  {id:194,source:'p10',target:'p11',type:'1'},//pop n taco / electro rock 2
 
   //Family 4 - City Hall people
-  {id:24,source:'f1',target:'p12',type:'enemy'},//miracles / snyder
-  {id:27,source:'f1',target:'f5',type:'enemy'},
-  {id:28,source:'f1',target:'p14',type:'enemy'},
-  {id:26,source:'f5',target:'p14',type:'friend'},//douglas / randall
-  {id:25,source:'f5',target:'p12',type:'friend'},//douglas / snyder 
-  {id:26,source:'p12',target:'p14',type:'friend'},
-  {id:26,source:'p17',target:'p14',type:'employee'},//surveyor / randall
-  {id:26,source:'p17',target:'f5',type:'employee'},//surveyor / douglas
-  {id:26,source:'p18',target:'p14',type:'employee'},//bulldozer / randall
-  {id:26,source:'p18',target:'f5',type:'employee'}//bulldozer / douglas
+  {id:195,source:'p9',target:'p12',type:'1'},//mrs. bennett / snyder
+  {id:196,source:'p3',target:'p12',type:'1'},//rhonda / snyder
+  {id:197,source:'p19',target:'p12',type:'1'},//rosa / snyder
+  {id:198,source:'p2',target:'p12',type:'1'},//ozone / snyder
+  {id:199,source:'p5',target:'p12',type:'1'},//turbo / snyder
+  {id:200,source:'p15',target:'p12',type:'1'},//coco / snyder
+  {id:201,source:'p21',target:'p12',type:'1'},//howard / snyder
+  {id:202,source:'p12',target:'p7',type:'1'},//snyder / magician
+  {id:203,source:'p12',target:'p14',type:'1'},//snyder / randall
+  {id:204,source:'p12',target:'p10',type:'1'},//snyder / pop n taco
+  {id:205,source:'p15',target:'f5',type:'2'},//coco / douglas
+  {id:206,source:'f3',target:'f5',type:'1'},//kelly / douglas
+  {id:207,source:'p19',target:'f5',type:'1'},//rosa / douglas
+  {id:208,source:'f5',target:'p14',type:'5'},//douglas / randall
+  {id:209,source:'f5',target:'p2',type:'3'},//douglas / ozone
+  {id:210,source:'f5',target:'p5',type:'2'},//douglas / turbo
+  {id:211,source:'f5',target:'p3',type:'3'},//douglas / rhonda
+  {id:212,source:'f5',target:'p10',type:'1'},//douglas / cooley
+  {id:213,source:'f5',target:'p6',type:'1'},//douglas / byron
+  {id:214,source:'p3',target:'p14',type:'4'},//rhonda / randall
+  {id:215,source:'p5',target:'p14',type:'2'},//turbo / randall
+  {id:216,source:'p17',target:'f3',type:'1'},//surveyor / kelly
+  {id:217,source:'p15',target:'p17',type:'1'},//coco / surveyor
+  {id:218,source:'f5',target:'p12',type:'1'},//douglas / snyder 
+  {id:219,source:'p17',target:'p14',type:'1'},//surveyor / randall
+  {id:220,source:'p17',target:'f5',type:'1'},//surveyor / douglas
+  {id:221,source:'p17',target:'p9',type:'1'},//surveyor / mrs. bennett
+  {id:222,source:'p18',target:'f5',type:'1'},//bulldozer / douglas
+  {id:223,source:'p18',target:'p2',type:'1'},//bulldozer / ozone
+  {id:224,source:'p18',target:'p3',type:'1'}//bulldozer / rhonda
+  //{id:26,source:'p18',target:'p14',type:'employee'},//bulldozer / randall
 ]
 
 //defining the chart
@@ -174,8 +356,8 @@ function familyChart() {
     //set the repel force - may need to be tweaked for multiple data
     //the lower the strength the more they will repel away from each other
     //the larger the distance, the more apart they will be
-    var repelForce = d3.forceManyBody().strength(-20000).distanceMax(90000000)
-                       .distanceMin(15);
+    var repelForce = d3.forceManyBody().strength(-30000).distanceMax(9000000)
+                       .distanceMin(150);
 
     //start the simulation
     //alpha decay - if less, force takes longer but is better positioned
@@ -189,14 +371,16 @@ function familyChart() {
                        //.velocityDecay(0.4)
                        .force("center", d3.forceCenter(width / 2, height / 2))//center on screen
                        .force("xAxis",d3.forceX(width/2).strength(0.4))
-                       .force("yAxis",d3.forceY(height/2).strength(0.6))
+                       .force("yAxis",d3.forceY(height/2).strength(0.8))
                        .force("repelForce",repelForce)
-                       .force("link", d3.forceLink().id(function(d) { return d.id }).distance(dist).strength(1.5))
-                       .force("collide",d3.forceCollide().radius(function(d) { return d.r * 20; }).iterations(10).strength(1))
+                       .force("link", d3.forceLink().id(function(d) { return d.id }).distance(dist).strength(1))//changed from 1.5
+                       .force("collide",d3.forceCollide().radius(function(d) { return d.r * 20; }).iterations(1).strength(.7))//doesn't do much...
+                       .force("charge", d3.forceManyBody().strength(-40))
 
     function dist(d){
       //used by link force
-      return 150
+      //determines link length
+      return 350
     }
 
 //===========need to experiment with different stroke thickness, color and style============
@@ -209,9 +393,37 @@ function familyChart() {
           //stroke width - thicker if partner/mentor/tko/rival
             if(d.type == 'partner' || d.type =='mentor' || d.type=="tko" || d.type=='rival'){
               return "5px"
-            } else{
+            } else if (d.type == '10'){
+              return "10px"
+            }
+            else if (d.type == '9'){
+              return "9px"
+            }
+            else if (d.type == '8'){
+              return "8px"
+            }
+            else if (d.type == '7'){
+              return "7px"
+            }
+            else if (d.type == '6'){
+              return "6px"
+            }
+            else if (d.type == '5'){
+              return "5px"
+            }
+            else if (d.type == '4'){
+              return "4px"
+            }
+            else if (d.type == '3'){
+              return "3px"
+            }
+            else if (d.type == '2'){
               return "2px"
-            }})
+            }
+            else if (d.type == '1'){
+              return "1px"
+            }
+          })
         .attr("stroke-dasharray", function(d){ //dashed if ex or acquaintance
           if(d.type=="ex-partner" || d.type=="acquaintance"){
             return "6,6"
@@ -231,26 +443,29 @@ function familyChart() {
           if(d.type=="member" || d.type =='friend' || d.type=='rival'){
             return "3px"
           }
+          if(d.type=="10" || d.type =='friend' || d.type=='rival'){
+            return "3px"
+          }
         })
       .attr("stroke", function(d){  //grey unless mentor (yellow), member / acquaintance (orange), or friend (yellow)
         switch (d.type) {
-          case 'tko':
+          case '10':
             return '#a82d34';//bright red
-          case 'friend':
-            return "#e15a79";//hot pink 
-          case 'member':
+          case '9':
+            return "#f97302";//dark orange  
+          case '8':
             return "#fbc441";//light yellow
           case 'mentor':
-            return "#f97302";//dark orange
+            return "#e15a79";//hot pink
           case 'acquaintance':
             return "#660099";//#fbc441 light yellow
           case 'partner':
             return "#ff9088";//light pink
-          case 'enemy':
+          case '7':
             return "#83e3fe";//light blue 
-          case 'rival':
+          case '5':
             return "#9999ff";//purple
-            case 'family':
+            case '6':
             return '#99ff00';//bright green, "#00f5d4" sea green crayola  
           default:
             return "gray";//#59d9fe dark blue, #32cffc darker
