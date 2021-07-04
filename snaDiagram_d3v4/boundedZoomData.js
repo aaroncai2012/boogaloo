@@ -168,6 +168,7 @@ function familyChart() {
 
     //set the radius of the family nodes
     var family_radius = 60;
+    var radius = 60;
 
 //==========need to experiment with different forces=============
 
@@ -400,13 +401,47 @@ function getTextBox(selection) {
     //and define tick functionality
    simulation.on("tick", function() {
 
-        links.attr("x1", function(d) {return d.source.x;})
-             .attr("y1", function(d) {return d.source.y;})
-             .attr("x2", function(d) {return d.target.x;})
-             .attr("y2", function(d) {return d.target.y;})
-
-        node.attr("transform", function(d){ return "translate(" + d.x + "," + d.y + ")"})
+         links.attr("x1", function(d) {//left x1 coord
+            if(d.source.x < radius/2){
+              d.source.x = radius/2;
+            }if(d.source.x > width - radius/2){//right x1 coord
+              d.source.x = width - radius/2;
+            }
+            return d.source.x;}
+            )
+             .attr("y1", function(d) { //top y1 coord
+              if(d.source.y < radius/2){
+                d.source.y = radius/2;
+                //console.log(d.source.y);
+              }
+              if(d.source.y > height - (radius/2)) {//bottom y1 coord
+                d.source.y = height - (radius/2);
+              }
+               return d.source.y;}
+               )
+             .attr("x2", function(d) {//left x2 coord
+              if (d.target.x < radius/2){
+                d.target.x = radius/2;
+              }
+              if (d.target.x > width - radius/2){//right x2 coord
+                d.target.x = width - radius/2;
+              }
+              return d.target.x;}
+              )
+             .attr("y2", function(d) {//top y2 coord
+              if(d.target.y < radius/2){
+                d.target.y = radius/2;
+              }
+              if (d.target.y > height - (radius/2)){//bottom y2 coord
+                d.target.y = height - radius/2;
+                console.log(height-radius/2);
+              }
+              return d.target.y;});
+        
+      //make nodes stay within bounds of window
+      node.attr("transform", function(d){ return "translate(" + Math.max(radius, Math.min(width - radius, d.x)) + "," + Math.max(radius, Math.min(height - radius, d.y)) + ")"})
     });
+
 
     function dragstarted(d) {
 
