@@ -5,39 +5,39 @@ var nodes = [
 
   //Ozone's crew
   {"type":'family',"id":'f1',"name":'Miracles Community Center', "actor": 'Adolfo "Shabba Doo" Quiñones', "group": "TKO Crew", "image":"nodes/miraclesCircle.png"},// Ozone
-  {"type":'person',"id":'p1',"name":'Lucia',"actor": "Sabrina Garcia", "role":"Turbo's Partner","image": "nodes/luciaCircle.png"},//lucia
-  {"type":'person',"id":'p2',"name":'Orlando "Ozone" Barco', "actor": 'Adolfo "Shabba Doo" Quiñones', "group": "TKO Crew", "image":"nodes/ozoneCircle.png"},//ozone
-  {"type":'person',"id":'p3',"name":'Rhonda',"actor": "Suzie Bono", "role":"Ozone's ex-partner, Kelly's enemy" ,"image": "nodes/rhondaYCircle.png"},//rhonda
-  {"type":'person',"id":'p4',"name":'Pop n Taco',"actor": "Bruno Falcon", "role":"friend of TKO" ,"image": "nodes/popNTacoCircle.png"},//pop n taco
-  {"type":'person',"id":'p5',"name":'Tony "Turbo" Ainley','actor': 'Michael "Boogaloo Shrimp" Chambers',"group": "TKO Crew","image": "nodes/turboCircle.png"},//turbo
-  {"type":'person',"id":'p6',"name":"Byron","actor":'Harry Caesar',"role":'Mentor at Miracles',"image": "nodes/byronCircle.png"},//byron
-  {"type":'person',"id":'p7',"name":"Magician","actor":'',"role":'friend of TKO, member of Miracles',"image": "nodes/magicianCircle.png"},//magician
-  {"type":'person',"id":'p15',"name":'Coco',"actor":'Vidal "Coco" Rodriguez', "role": 'friend of TKO, member of Miracles',"image": "nodes/cocoCircle.png"},//coco
-  {"type":'person',"id":'p21',"name":'Reporter Howard Howard',"actor":'William Cort', "role": 'enemy of Randall and Douglas, supporter of Miracles',"image": "nodes/howardCircle.png"},//howard howard
+  {"type":'family',"id":'p1',"name":'Lucia',"actor": "Sabrina Garcia", "role":"Turbo's Partner","image": "nodes/luciaCircle.png"},//lucia
+  {"type":'family',"id":'p2',"name":'Orlando "Ozone" Barco', "actor": 'Adolfo "Shabba Doo" Quiñones', "group": "TKO Crew", "image":"nodes/ozoneCircle.png"},//ozone
+  {"type":'family',"id":'p3',"name":'Rhonda',"actor": "Suzie Bono", "role":"Ozone's ex-partner, Kelly's enemy" ,"image": "nodes/rhondaYCircle.png"},//rhonda
+  {"type":'family',"id":'p4',"name":'Pop n Taco',"actor": "Bruno Falcon", "role":"friend of TKO" ,"image": "nodes/popNTacoCircle.png"},//pop n taco
+  {"type":'family',"id":'p5',"name":'Tony "Turbo" Ainley','actor': 'Michael "Boogaloo Shrimp" Chambers',"group": "TKO Crew","image": "nodes/turboCircle.png"},//turbo
+  {"type":'family',"id":'p6',"name":"Byron","actor":'Harry Caesar',"role":'Mentor at Miracles',"image": "nodes/byronCircle.png"},//byron
+  {"type":'family',"id":'p7',"name":"Magician","actor":'',"role":'friend of TKO, member of Miracles',"image": "nodes/magicianCircle.png"},//magician
+  {"type":'family',"id":'p15',"name":'Coco',"actor":'Vidal "Coco" Rodriguez', "role": 'friend of TKO, member of Miracles',"image": "nodes/cocoCircle.png"},//coco
+  {"type":'family',"id":'p21',"name":'Reporter Howard Howard',"actor":'William Cort', "role": 'enemy of Randall and Douglas, supporter of Miracles',"image": "nodes/howardCircle.png"},//howard howard
 
   //Nurse
-  {"type":'person',"id":'p20',"name":'Head Nurse (Doreen Shay)',"actor":'Lu Leonard', "role": 'caretaker and enemy of Turbo',"image": "nodes/headNurseCircle.png"},//head nurse
+  {"type":'family',"id":'p20',"name":'Head Nurse (Doreen Shay)',"actor":'Lu Leonard', "role": 'caretaker and enemy of Turbo',"image": "nodes/headNurseCircle.png"},//head nurse
 
   //Kelly's family
   {"type":'family',"id":'f3',"name":'Kelly "Special K" Bennett',"actor": "Lucinda Dickey", "group": "TKO Crew","image" : "nodes/kellyCircle.png"},// kelly
-  {"type":'person',"id":'p8',"name":'Mr. Bennett',"actor": "John Christy Ewing", "role": "Kelly's dad","image": "nodes/mrBennettCircle.png"}, // mr. bennett
-  {"type":'person',"id":'p9',"name":'Mrs. Bennett',"actor": "Jo de Winter", "role": "Kelly's mom","image": "nodes/msBennettCircle.png"}, // mrs. bennett
-  {"type":'person',"id":'p16',"name":'Derek',"actor": "Nick Segal", "role": "Kelly's fiance and enemy","image": "nodes/derekCircle.png"}, // derek
-  {"type":'person',"id":'p19',"name":'Rosa',"actor": "Alberta Sanchez", "role": "maid for the Bennett's, friend of Kelly","image": "nodes/rosaCircle.png"}, // rosa
+  {"type":'family',"id":'p8',"name":'Mr. Bennett',"actor": "John Christy Ewing", "role": "Kelly's dad","image": "nodes/mrBennettCircle.png"}, // mr. bennett
+  {"type":'family',"id":'p9',"name":'Mrs. Bennett',"actor": "Jo de Winter", "role": "Kelly's mom","image": "nodes/msBennettCircle.png"}, // mrs. bennett
+  {"type":'family',"id":'p16',"name":'Derek',"actor": "Nick Segal", "role": "Kelly's fiance and enemy","image": "nodes/derekCircle.png"}, // derek
+  {"type":'family',"id":'p19',"name":'Rosa',"actor": "Alberta Sanchez", "role": "maid for the Bennett's, friend of Kelly","image": "nodes/rosaCircle.png"}, // rosa
 
 
   //Electro Rock Dancers
   {"type":'family',"id":'f4',"name":'Strobe',"actor": 'Steve "Sugarfoot" Notario', "group": "Electro-Rock", "role": "rival of Ozone, supporter of Miracles", "image":"nodes/strobeCircle.png"},
-  {"type":'person',"id":'p10',"name":'Featured Street Dancer TKO',"actor":'Derek "Cooley Bop" Jackson', "role": "dancer for TKO crew, member of Miracles","image": "nodes/cooleyCircle.png"},
-  {"type":'person',"id":'p11',"name":'Lollipop',"actor": 'Ana "Lollipop" Sanchez', "role":"Electro-Rock dancer, Strobe's dance partner", "image": "nodes/electroRockGirlYCircle.png"},
-  {"type":'person',"id":'p13',"name":'Radiotron Rapper',"actor": "Ice T", "role": "aquaintance of Electro-Rock, TKO and Miracles","image": "nodes/radiotronCircle.png"},
+  {"type":'family',"id":'p10',"name":'Featured Street Dancer TKO',"actor":'Derek "Cooley Bop" Jackson', "role": "dancer for TKO crew, member of Miracles","image": "nodes/cooleyCircle.png"},
+  {"type":'family',"id":'p11',"name":'Lollipop',"actor": 'Ana "Lollipop" Sanchez', "role":"Electro-Rock dancer, Strobe's dance partner", "image": "nodes/electroRockGirlYCircle.png"},
+  {"type":'family',"id":'p13',"name":'Radiotron Rapper',"actor": "Ice T", "role": "aquaintance of Electro-Rock, TKO and Miracles","image": "nodes/radiotronCircle.png"},
   
   //Enemies
   {"type":'family',"id":'f5',"name":'Mr. Douglas', "actor": "Peter MacLean", "role":"enemy of TKO, Miracles, works with Randall", "image":"nodes/douglasCircle.png"},
-  {"type":'person',"id":'p12',"name":'Mrs. Snyder',"actor": "Sandy Lipton", "role": "city official, sympathetic yet an enemy to Miracles","image": "nodes/snyderCircle.png"},
-  {"type":'person',"id":'p14',"name":'Randall',"actor": "Ken Olfson","role":'wants to develop Miracles, working with Mr. Douglas',"image": "nodes/randallCircle.png"},
-  {"type":'person',"id":'p17',"name":'Surveyor',"actor": "Daniel Riordan","role":'works for Randall and Mr. Douglas',"image": "nodes/surveyorCircle.png"},
-  {"type":'person',"id":'p18',"name":'Bulldozer Driver',"actor": "Jim W. Jones","role":'works for Randall and Mr. Douglas',"image": "nodes/bulldozerDriverCircle.png"}
+  {"type":'family',"id":'p12',"name":'Mrs. Snyder',"actor": "Sandy Lipton", "role": "city official, sympathetic yet an enemy to Miracles","image": "nodes/snyderCircle.png"},
+  {"type":'family',"id":'p14',"name":'Randall',"actor": "Ken Olfson","role":'wants to develop Miracles, working with Mr. Douglas',"image": "nodes/randallCircle.png"},
+  {"type":'family',"id":'p17',"name":'Surveyor',"actor": "Daniel Riordan","role":'works for Randall and Mr. Douglas',"image": "nodes/surveyorCircle.png"},
+  {"type":'family',"id":'p18',"name":'Bulldozer Driver',"actor": "Jim W. Jones","role":'works for Randall and Mr. Douglas',"image": "nodes/bulldozerDriverCircle.png"}
 ]
 
 //currently there are 10 types of links
@@ -108,13 +108,19 @@ var edges = [
   {id:26,source:'p18',target:'f5',type:'employee'}//bulldozer / douglas
 ]
 
+//set the radius of the family nodes
+var family_radius = 60;
+var radius = 60;//this relates to the image width/height below, is half of it
+
 //defining the chart
 var myChart = familyChart().nodes(nodes)
                            .links(edges);
 
-    //defining the width and height of the svg
+//defining the width and height of the svg
+var topHeight = document.getElementById("top").offsetHeight
+//console.log(topHeight);
 var width = window.innerWidth, // default width
-  height = window.innerHeight;
+    height = window.innerHeight - topHeight;
 
 // then, create your svg element and a <g> container
 // for all of the transformed content
@@ -125,6 +131,7 @@ var svg = d3.select("body").append("svg")
       .attr("width", width)
       .attr("height", height)
       .style("background-color", "#161616");
+      //.attr("viewBox", "0 0 " + width + " " + height);
 
     g = svg.append("g");
 
@@ -159,6 +166,15 @@ var zoom = d3.zoom()
 svg.call(zoom)
 svg.call(myChart);
 
+function legend(){
+  var x = document.getElementById("legend");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
 function familyChart() {
 
   var nodes = [],
@@ -166,9 +182,7 @@ function familyChart() {
 
   function my(svg) {
 
-    //set the radius of the family nodes
-    var family_radius = 60;
-    var radius = 60;
+ 
 
 //==========need to experiment with different forces=============
 
@@ -194,6 +208,7 @@ function familyChart() {
                        .force("repelForce",repelForce)
                        .force("link", d3.forceLink().id(function(d) { return d.id }).distance(dist).strength(1.5))
                        .force("collide",d3.forceCollide().radius(function(d) { return d.r * 20; }).iterations(10).strength(1))
+                       .force("charge", d3.forceManyBody().strength(-40))
 
     function dist(d){
       //used by link force
@@ -203,7 +218,7 @@ function familyChart() {
 //===========need to experiment with different stroke thickness, color and style============
     //define the links
     var links = g.selectAll("foo")
-        .data(edges)
+        .data(edges)//load links array
         .enter()
         .append("line")
         .attr("stroke-width",function(d){
@@ -274,7 +289,7 @@ function familyChart() {
     //draw the nodes with drag functionality
     //added g to links
     var node = g.selectAll("foo")
-        .data(nodes)
+        .data(nodes)//load nodes array
         .enter()
         .append("g")
         .call(d3.drag()
@@ -292,20 +307,10 @@ function familyChart() {
         .attr("height", 1)
         .append("svg:image")
         .attr("xlink:href", function(d) {return d.image})
-        .attr("height", "120")
-        .attr("width", "120")
+        .attr("height", "120")//makes image smaller
+        .attr("width", "120")//makes image smaller
         .attr("x", 0)
         .attr("y", 0);
-
-        //append deceased arc - only visible if "dead" is defined
-        node.append('path')
-            .attr('class',"semi-circle")
-            .attr('fill','none')
-            .attr('stroke','grey')
-            .attr('stroke-width', function(d){
-              if(d.dead == undefined){return "0px"
-              }else{return "4px"}})
-            .attr('d',describeArc(0, -2.5, 12.5, -90, 90))
 
     //append circles
     //hover states
@@ -327,10 +332,6 @@ function familyChart() {
                               //sets tooltip.  t_text = content in html
                               t_text = "<strong>" + titleCase(d.name) + "</strong><br>Actor: " + d.actor
                               //console.log(d.name)
-                              if(d.group !== undefined){
-                                //only add group if it is defined
-                                t_text += "<br>Group: " + d.group
-                              }
                               if(d.role !== undefined){
                                 //only add role if it is defined
                                 t_text += "<br>Role: " + d.role
@@ -393,7 +394,7 @@ function getTextBox(selection) {
     selection.each(function(d) { d.bbox = this.getBBox(); })
 }
 
-    //finally - attach the nodes and the links to the simulation
+     //finally - attach the nodes and the links to the simulation
     simulation.nodes(nodes);
     simulation.force("link")
               .links(edges);
@@ -401,7 +402,7 @@ function getTextBox(selection) {
     //and define tick functionality
    simulation.on("tick", function() {
 
-         links.attr("x1", function(d) {//left x1 coord
+          links.attr("x1", function(d) {//left x1 coord
             if(d.source.x < radius/2){
               d.source.x = radius/2;
             }if(d.source.x > width - radius/2){//right x1 coord
@@ -442,7 +443,6 @@ function getTextBox(selection) {
       node.attr("transform", function(d){ return "translate(" + Math.max(radius, Math.min(width - radius, d.x)) + "," + Math.max(radius, Math.min(height - radius, d.y)) + ")"})
     });
 
-
     function dragstarted(d) {
 
        if (!d3.event.active) simulation.alphaTarget(0.3).restart();
@@ -459,9 +459,24 @@ function getTextBox(selection) {
       }
     }
 
+
+
+var mouse_in_window = true;
+document.addEventListener('mousedown', function(evt){
+  console.log('Mouse down');
+})
+
     function dragged(d) {
-        d.fx = d3.event.x;
-        d.fy = d3.event.y;
+      //make links stay within confines of window
+      if(mouse_in_window){
+        console.log(d3.event.x > width);
+        if(d3.event.x >= radius / 2 && d3.event.x <= width - radius / 2){
+          if(d3.event.y >= radius / 2 && d3.event.y <= height - radius / 2){
+            d.fx = d3.event.x;
+            d.fy = d3.event.y;
+          }
+        }
+      }
     }
 
     function dragended(d) {

@@ -5,6 +5,10 @@
     <meta charset="utf-8">
       <script src = "d3/d3_v4.js"></script>
  <style>
+
+  /* this is the typical dimensions for an iPhone */
+
+
  	.tooltip{
  		padding: 10px;
  		border-radius: 10px;
@@ -19,23 +23,21 @@
     /*background-color: #161616;*/
     background-image: url(Endless-Constellation.svg);
   }
+  #top{
+    background-color: black;
+    padding: 1em;
+  }
 
   button.myButton {
-  position: absolute;
-  z-index: 3;
-  background: white;
-  width: 10%;
   left: 60px;
-  top: 3em;
-  background-color:#83e3fe;
-  border-radius:28px;
   border:1px solid #dcdbdb;
+  background-color: black;
   display:inline-block;
   cursor:pointer;
-  color:#161616;
+  color:white;
   font-family:Arial;
-  font-size:17px;
-  padding:16px 31px;
+  font-size:1em;
+  padding:1em 2em;
   text-decoration:none;
   text-shadow:0px 1px 0px #30525c;
 }
@@ -46,13 +48,29 @@
 .myButton:active {
   color:#161616;
   background-color:#68acbd;
-  position: absolute;
-  z-index: 3;
-  width: 10%;
-  left: 60px;
-  top:3.5em;
 }
 
+button.legendButton{
+  left: 60px;
+  border:1px solid #dcdbdb;
+  display:inline-block;
+  background-color: black;
+  cursor:pointer;
+  color:white;
+  font-family:Arial;
+  font-size:1em;
+  padding:1em 2em;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #30525c;
+}
+.legendButton:hover {
+  color:#161616;
+  background-color:#78c6db;
+}
+.legendButton:active {
+  color:#161616;
+  background-color:#68acbd;
+ } 
   img {
   max-width: 150%;
   height: auto;
@@ -65,14 +83,31 @@
 
 html, body {margin: 0; height: 100%; overflow: hidden}
 
+@media only screen and (min-width: 280px) and (max-width: 768px) {
+  button.myButton {
+    visibility: hidden;
+  }
+  button.legendButton {
+    visibility: hidden;
+  }
+  #legend{
+    visibility: hidden; }
+
+}
+
  </style>
   </head>
   <body>
+    <div id="top">
+
+      <button class="myButton" onClick="window.location.reload();">Reload Diagram</button>
+
+      <button class="legendButton" id="LegendButton" onclick="legend()">Legend</button>
+
+    </div>
     <div id= "forces" id="container" class="svg-container"></div>
-    
-    <button class="myButton" onClick="window.location.reload();">Reload Diagram</button>
-    
-    <img src="nodes/snaLegend.png" alt="Social Network Legend">
+
+    <img id="legend" src="nodes/snaLegend.png" alt="Social Network Legend">
     
     <script src="boundedZoomData.js"></script>
   </body>
