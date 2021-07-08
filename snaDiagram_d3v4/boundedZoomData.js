@@ -59,22 +59,22 @@ var nodes = [
 //this is where we connect the nodes with different types of links/edges
 var edges = [
   //FAMILY 1 - Ozone's Crew
-  {id:1,source:'f1',target:'p2',type:'member'},//miracles / ozone
+  {id:1,source:'f1',target:'f7',type:'member'},//miracles / ozone
   {id:2,source:'f1',target:'p5',type:'member'},//miracles
   {id:3,source:'f1',target:'p6',type:'member'},//miracles
   {id:4,source:'f1',target:'f4',type:'acquaintance'},//miracles / strobe
-  {id:5,source:'p2',target:'f3',type:'tko'},//ozone
+  {id:5,source:'f7',target:'f3',type:'tko'},//ozone
   {id:6,source:'p1',target:'p5',type:'partner'},//lucia / turbo
-  {id:7,source:'p2',target:'p3',type:'ex-partner'},//ozone / 
-  {id:8,source:'p2',target:'p4',type:'friend'},//ozone / pop n taco
-  {id:9,source:'p2',target:'p5',type:'tko'},//ozone / turbo
-  {id:12,source:'p2',target:'p6',type:'mentor'},//ozone / 
+  {id:7,source:'f7',target:'p3',type:'ex-partner'},//ozone / 
+  {id:8,source:'f7',target:'p4',type:'friend'},//ozone / pop n taco
+  {id:9,source:'f7',target:'p5',type:'tko'},//ozone / turbo
+  {id:12,source:'f7',target:'p6',type:'mentor'},//ozone / 
   {id:11,source:'p5',target:'p6',type:'mentor'},
   {id:13,source:'f3',target:'p3',type:'enemy'},
   {id:10,source:'f3',target:'p5',type:'tko'},
   {id:10,source:'p7',target:'f1',type:'member'},//magician / miracles
-  {id:10,source:'p7',target:'p2',type:'friend'},//magician / ozone
-  {id:10,source:'p15',target:'p2',type:'friend'},//coco / ozone
+  {id:10,source:'p7',target:'f7',type:'friend'},//magician / ozone
+  {id:10,source:'p15',target:'f7',type:'friend'},//coco / ozone
   {id:10,source:'p15',target:'f1',type:'member'},//coco / miracles
   {id:10,source:'p21',target:'f1',type:'acquaintance'},//howard / miracles
   {id:10,source:'p21',target:'p14',type:'enemy'},//howard / randall
@@ -95,12 +95,12 @@ var edges = [
   //FAMILY 3 - Electro-Rock Dancers
   {id:22,source:'f1',target:'p10',type:'member'},
   {id:20,source:'f1',target:'p13',type:'acquaintance'},
-  {id:17,source:'f4',target:'p2',type:'rival'}, //strobe / ozone
+  {id:17,source:'f4',target:'f7',type:'rival'}, //strobe / ozone
   {id:18,source:'f4',target:'p11',type:'partner'},
   {id:19,source:'f4',target:'p13',type:'acquaintance'},
-  {id:21,source:'p2',target:'p13',type:'acquaintance'},
-  {id:21,source:'p2',target:'p10',type:'friend'},
-  {id:23,source:'p2',target:'p10',type:'friend'},
+  {id:21,source:'f7',target:'p13',type:'acquaintance'},
+  {id:21,source:'f7',target:'p10',type:'friend'},
+  {id:23,source:'f7',target:'p10',type:'friend'},
 
   //Family 4 - City Hall people
   {id:24,source:'f1',target:'p12',type:'enemy'},//miracles / snyder
