@@ -399,13 +399,19 @@ var edges = [
 
 ]
 
+//set the radius of the family nodes
+var family_radius = 60;
+var radius = 60;
+
 //defining the chart
 var myChart = familyChart().nodes(nodes)
                            .links(edges);
 
-    //defining the width and height of the svg
+//defining the width and height of the svg
+var topHeight = document.getElementById("top").offsetHeight
+//console.log(topHeight);
 var width = window.innerWidth, // default width
-  height = window.innerHeight;
+    height = window.innerHeight - topHeight;
 
 // then, create your svg element and a <g> container
 // for all of the transformed content
@@ -450,17 +456,22 @@ var zoom = d3.zoom()
 svg.call(zoom)
 svg.call(myChart);
 
+//make legend visible on click
+function legend(){
+  var x = document.getElementById("legend");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
 function familyChart() {
 
   var nodes = [],
       links = [] // default height
 
   function my(svg) {
-
-    //set the radius of the family nodes
-    var family_radius = 60;
-    var big_radius = 60;//nothing works...
-    var radius = 60;
 
 //==========need to experiment with different forces=============
 

@@ -21,22 +21,21 @@
   }
   
 
+   #top{
+    background-color: black;
+    padding: 1em;
+  }
+
   button.myButton {
-  position: absolute;
-  z-index: 3;
-  background: white;
-  width: 10%;
   left: 60px;
-  top: 3em;
-  background-color:#83e3fe;
-  border-radius:28px;
   border:1px solid #dcdbdb;
+  background-color: black;
   display:inline-block;
   cursor:pointer;
-  color:#161616;
+  color:white;
   font-family:Arial;
-  font-size:17px;
-  padding:16px 31px;
+  font-size:1em;
+  padding:1em 2em;
   text-decoration:none;
   text-shadow:0px 1px 0px #30525c;
 }
@@ -47,12 +46,29 @@
 .myButton:active {
   color:#161616;
   background-color:#68acbd;
-  position: absolute;
-  z-index: 3;
-  width: 10%;
-  left: 60px;
-  top:3.5em;
 }
+
+button.legendButton{
+  left: 60px;
+  border:1px solid #dcdbdb;
+  display:inline-block;
+  background-color: black;
+  cursor:pointer;
+  color:white;
+  font-family:Arial;
+  font-size:1em;
+  padding:1em 2em;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #30525c;
+}
+.legendButton:hover {
+  color:#161616;
+  background-color:#78c6db;
+}
+.legendButton:active {
+  color:#161616;
+  background-color:#68acbd;
+ } 
 
   img {
   max-width: 150%;
@@ -66,18 +82,31 @@
 
 html, body {margin: 0; height: 100%; overflow: hidden}
 
+@media only screen and (min-width: 280px) and (max-width: 768px) {
+  button.myButton {
+    visibility: hidden;
+  }
+  button.legendButton {
+    visibility: hidden;
+  }
+  #legend{
+    visibility: hidden; }
 
+}
  </style>
   </head>
   <body>
 
-    <button class="myButton" onClick="window.location.reload();">Reload Diagram</button>
+    <div id="top">
+
+      <button class="myButton" onClick="window.location.reload();">Reload Diagram</button>
+
+      <button class="legendButton" id="LegendButton" onclick="legend()">Legend</button>
+
+    </div>
     
-    <!--<img src="nodes/snaLegend.png" alt="Social Network Legend">-->
-    <script>
+    <img id="legend" src="nodes/snaLegend.png" alt="Social Network Legend">
 
-
-</script>
     <script src="boundedZoomData.js"></script>
 
   </body>
