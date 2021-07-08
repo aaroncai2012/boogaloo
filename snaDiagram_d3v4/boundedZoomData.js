@@ -4,16 +4,19 @@
 var nodes = [
 
   //Ozone's crew
-  {"type":'family',"id":'f1',"name":'Miracles Community Center', "actor": 'Adolfo "Shabba Doo" Quiñones', "group": "TKO Crew", "image":"nodes/miraclesCircle.png"},// Ozone
-  {"type":'family',"id":'p1',"name":'Lucia',"actor": "Sabrina Garcia", "role":"Turbo's Partner","image": "nodes/luciaCircle.png"},//lucia
-  {"type":'family',"id":'p2',"name":'Orlando "Ozone" Barco', "actor": 'Adolfo "Shabba Doo" Quiñones', "group": "TKO Crew", "image":"nodes/ozoneCircle.png"},//ozone
-  {"type":'family',"id":'p3',"name":'Rhonda',"actor": "Suzie Bono", "role":"Ozone's ex-partner, Kelly's enemy" ,"image": "nodes/rhondaYCircle.png"},//rhonda
-  {"type":'family',"id":'p4',"name":'Pop n Taco',"actor": "Bruno Falcon", "role":"friend of TKO" ,"image": "nodes/popNTacoCircle.png"},//pop n taco
-  {"type":'family',"id":'p5',"name":'Tony "Turbo" Ainley','actor': 'Michael "Boogaloo Shrimp" Chambers',"group": "TKO Crew","image": "nodes/turboCircle.png"},//turbo
-  {"type":'family',"id":'p6',"name":"Byron","actor":'Harry Caesar',"role":'Mentor at Miracles',"image": "nodes/byronCircle.png"},//byron
+  {"group": "1", "type":'family',"id":'f1',"name":'Miracles Community Center', "image":"nodes/miraclesCircle.png"},// miracles
+  {"group": "1","type":'family',"id":'p1',"name":'Lucia',"actor": "Sabrina Garcia", "role":"Turbo's Partner","image": "nodes/luciaCircle.png"},//lucia
+  {"group": "1","type":'family',"id":'f7',"name":'Orlando "Ozone" Barco', "actor": 'Adolfo "Shabba Doo" Quiñones', "group": "TKO Crew", "image":"nodes/ozoneCircle.png"},//ozone
+  {"group": "1","type":'family',"id":'p3',"name":'Rhonda',"actor": "Suzie Bono", "role":"Ozone's ex-partner, Kelly's enemy" ,"image": "nodes/rhondaYCircle.png"},//rhonda
+  {"group": "1","type":'family',"id":'p4',"name":'Pop n Taco',"actor": "Bruno Falcon", "role":"friend of TKO" ,"image": "nodes/popNTacoCircle.png"},//pop n taco
+  {"group": "1","type":'family',"id":'p5',"name":'Tony "Turbo" Ainley','actor': 'Michael "Boogaloo Shrimp" Chambers',"group": "TKO Crew","image": "nodes/turboCircle.png"},//turbo
+  {"group": "1","type":'family',"id":'p6',"name":"Byron","actor":'Harry Caesar',"role":'Mentor at Miracles',"image": "nodes/byronCircle.png"},//byron
   {"type":'family',"id":'p7',"name":"Magician","actor":'',"role":'friend of TKO, member of Miracles',"image": "nodes/magicianCircle.png"},//magician
   {"type":'family',"id":'p15',"name":'Coco',"actor":'Vidal "Coco" Rodriguez', "role": 'friend of TKO, member of Miracles',"image": "nodes/cocoCircle.png"},//coco
   {"type":'family',"id":'p21',"name":'Reporter Howard Howard',"actor":'William Cort', "role": 'enemy of Randall and Douglas, supporter of Miracles',"image": "nodes/howardCircle.png"},//howard howard
+  {"type":'family',"id":'p22',"name":'Singer',"actor":'Carol Lynn Townes', "role": 'supporter of Miracles',"image": "nodes/singerCircle.png"},//singer
+  {"type":'family',"id":'p23',"name":'Emcee',"actor":'Frankie Crocker', "role": 'supporter of Miracles',"image": "nodes/emceeCircle.png"},//emcee
+  {"type":'family',"id":'p24',"name":'Kimberly',"actor":'Kimberly McCullough', "role": 'member of Miracles',"image": "nodes/kimberlyCircle.png"},//kimberly
 
   //Nurse
   {"type":'family',"id":'p20',"name":'Head Nurse (Doreen Shay)',"actor":'Lu Leonard', "role": 'caretaker and enemy of Turbo',"image": "nodes/headNurseCircle.png"},//head nurse
@@ -24,12 +27,13 @@ var nodes = [
   {"type":'family',"id":'p9',"name":'Mrs. Bennett',"actor": "Jo de Winter", "role": "Kelly's mom","image": "nodes/msBennettCircle.png"}, // mrs. bennett
   {"type":'family',"id":'p16',"name":'Derek',"actor": "Nick Segal", "role": "Kelly's fiance and enemy","image": "nodes/derekCircle.png"}, // derek
   {"type":'family',"id":'p19',"name":'Rosa',"actor": "Alberta Sanchez", "role": "maid for the Bennett's, friend of Kelly","image": "nodes/rosaCircle.png"}, // rosa
+  {"type":'family',"id":'p25',"name":'Paris Director',"actor": "Jerry Lazarus", "role": "judge of Kelly's dancing audition","image": "nodes/parisDirectorCircle.png"}, // paris director
 
 
   //Electro Rock Dancers
   {"type":'family',"id":'f4',"name":'Strobe',"actor": 'Steve "Sugarfoot" Notario', "group": "Electro-Rock", "role": "rival of Ozone, supporter of Miracles", "image":"nodes/strobeCircle.png"},
-  {"type":'family',"id":'p10',"name":'Featured Street Dancer TKO',"actor":'Derek "Cooley Bop" Jackson', "role": "dancer for TKO crew, member of Miracles","image": "nodes/cooleyCircle.png"},
-  {"type":'family',"id":'p11',"name":'Lollipop',"actor": 'Ana "Lollipop" Sanchez', "role":"Electro-Rock dancer, Strobe's dance partner", "image": "nodes/electroRockGirlYCircle.png"},
+  {"type":'family',"id":'p10',"name":'Cooley Jackson',"actor":'Derek "Cooley Bop" Jackson', "role": "dancer for TKO crew, member of Miracles","image": "nodes/cooleyCircle.png"},
+  {"type":'family',"id":'p11',"name":'Electro Rocker Dancer',"actor": 'Ana "Lollipop" Sanchez', "role":"Electro-Rock dancer, Strobe's dance partner", "image": "nodes/electroRockGirlYCircle.png"},
   {"type":'family',"id":'p13',"name":'Radiotron Rapper',"actor": "Ice T", "role": "aquaintance of Electro-Rock, TKO and Miracles","image": "nodes/radiotronCircle.png"},
   
   //Enemies
@@ -37,7 +41,10 @@ var nodes = [
   {"type":'family',"id":'p12',"name":'Mrs. Snyder',"actor": "Sandy Lipton", "role": "city official, sympathetic yet an enemy to Miracles","image": "nodes/snyderCircle.png"},
   {"type":'family',"id":'p14',"name":'Randall',"actor": "Ken Olfson","role":'wants to develop Miracles, working with Mr. Douglas',"image": "nodes/randallCircle.png"},
   {"type":'family',"id":'p17',"name":'Surveyor',"actor": "Daniel Riordan","role":'works for Randall and Mr. Douglas',"image": "nodes/surveyorCircle.png"},
-  {"type":'family',"id":'p18',"name":'Bulldozer Driver',"actor": "Jim W. Jones","role":'works for Randall and Mr. Douglas',"image": "nodes/bulldozerDriverCircle.png"}
+  {"type":'family',"id":'p18',"name":'Bulldozer Driver',"actor": "Jim W. Jones","role":'works for Randall and Mr. Douglas',"image": "nodes/bulldozerDriverCircle.png"},
+
+  {"type":'family',"id":'f6',"name":'City Hall',"image": "nodes/cityHallCircle.png"},//city hall
+
 ]
 
 //currently there are 10 types of links
