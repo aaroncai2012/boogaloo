@@ -16,7 +16,7 @@ var nodes = [
   {"type":'family',"id":'p21',"name":'Reporter Howard Howard',"actor":'William Cort', "role": 'enemy of Randall and Douglas, supporter of Miracles',"image": "nodes/howardCircle.png"},//howard howard
   {"type":'family',"id":'p22',"name":'Singer',"actor":'Carol Lynn Townes', "role": 'supporter of Miracles',"image": "nodes/singerCircle.png"},//singer
   {"type":'family',"id":'p23',"name":'Emcee',"actor":'Frankie Crocker', "role": 'supporter of Miracles',"image": "nodes/emceeCircle.png"},//emcee
-  {"type":'family',"id":'p24',"name":'Kimberly',"actor":'Kimberly McCullough', "role": 'member of Miracles',"image": "nodes/kimberlyCircle.png"},//kimberly
+  {"type":'family',"id":'p24',"name":'Kimberly',"actor":'Kimberly McCullough', "role": 'member of Miracles, friend of TKO group',"image": "nodes/kimberlyCircle.png"},//kimberly
 
   //Nurse
   {"type":'family',"id":'p20',"name":'Head Nurse (Doreen Shay)',"actor":'Lu Leonard', "role": 'caretaker and enemy of Turbo',"image": "nodes/headNurseCircle.png"},//head nurse
@@ -60,6 +60,7 @@ var nodes = [
 var edges = [
   //FAMILY 1 - Ozone's Crew
   {id:1,source:'f1',target:'f7',type:'member'},//miracles / ozone
+  {id:1,source:'f1',target:'p24',type:'member'},//miracles / kimberly
   {id:2,source:'f1',target:'p5',type:'member'},//miracles
   {id:3,source:'f1',target:'p6',type:'member'},//miracles
   {id:4,source:'f1',target:'f4',type:'acquaintance'},//miracles / strobe
@@ -67,6 +68,8 @@ var edges = [
   {id:6,source:'p1',target:'p5',type:'partner'},//lucia / turbo
   {id:7,source:'f7',target:'p3',type:'ex-partner'},//ozone / 
   {id:8,source:'f7',target:'p4',type:'friend'},//ozone / pop n taco
+  {id:8,source:'f3',target:'p4',type:'friend'},//kelly / pop n taco
+  {id:8,source:'p5',target:'p4',type:'friend'},//turbo / pop n taco
   {id:9,source:'f7',target:'p5',type:'tko'},//ozone / turbo
   {id:12,source:'f7',target:'p6',type:'mentor'},//ozone / 
   {id:11,source:'p5',target:'p6',type:'mentor'},
@@ -76,9 +79,25 @@ var edges = [
   {id:10,source:'p7',target:'f7',type:'friend'},//magician / ozone
   {id:10,source:'p15',target:'f7',type:'friend'},//coco / ozone
   {id:10,source:'p15',target:'f1',type:'member'},//coco / miracles
+  {id:1,source:'p15',target:'p24',type:'friend'},//coco / kimberly
+  {id:1,source:'f7',target:'p24',type:'friend'},//ozone / kimberly
+  {id:1,source:'p5',target:'p24',type:'friend'},//turbo / kimberly
+  {id:1,source:'f3',target:'p24',type:'friend'},//kelly / kimberly
   {id:10,source:'p21',target:'f1',type:'acquaintance'},//howard / miracles
   {id:10,source:'p21',target:'p14',type:'enemy'},//howard / randall
   {id:10,source:'p21',target:'f5',type:'enemy'},//howard / douglas
+  {id:8,source:'f3',target:'p25',type:'employee'},//kelly / paris director
+
+  {id:10,source:'p23',target:'f1',type:'acquaintance'},//emcee / miracles
+  {id:10,source:'p23',target:'p5',type:'acquaintance'},//emcee / turbo
+  {id:10,source:'p23',target:'f3',type:'acquaintance'},//emcee / kelly
+  {id:10,source:'p23',target:'f7',type:'acquaintance'},//emcee / ozone
+
+  {id:10,source:'p22',target:'f1',type:'acquaintance'},//singer / miracles
+  {id:10,source:'p22',target:'p5',type:'acquaintance'},//singer / turbo
+  {id:10,source:'p22',target:'f3',type:'acquaintance'},//singer / kelly
+  {id:10,source:'p22',target:'f7',type:'acquaintance'},//singer / ozone
+
 
   //NURSES
   {id:9,source:'p20',target:'p5',type:'enemy'},//nurse / turbo
@@ -103,6 +122,11 @@ var edges = [
   {id:23,source:'f7',target:'p10',type:'friend'},
 
   //Family 4 - City Hall people
+  {id:26,source:'f5',target:'f6',type:'employee'},//douglas / city hall
+  {id:26,source:'f1',target:'f6',type:'employee'},//miracles / city hall
+  {id:26,source:'f6',target:'p12',type:'employee'},//city hall / snyder
+  {id:26,source:'f6',target:'p14',type:'employee'},//city hall / randall
+
   {id:24,source:'f1',target:'p12',type:'enemy'},//miracles / snyder
   {id:27,source:'f1',target:'f5',type:'enemy'},
   {id:28,source:'f1',target:'p14',type:'enemy'},
@@ -230,8 +254,16 @@ function familyChart() {
         .append("line")
         .attr("stroke-width",function(d){
           //stroke width - thicker if partner/mentor/tko/rival
-            if(d.type == 'partner' || d.type =='mentor' || d.type=="tko" || d.type=='rival'){
+            if(d.type == 'partner'){
+              return "8px"
+            } else if (d.type=="friend"){
+              return "6px"
+            } else if (d.type=="mentor"){
               return "5px"
+            } else if (d.type=="member" || d.type=="family" || d.type=="enemy" || d.type=="rival"){
+              return "4px"
+            } else if (d.type=="tko"){
+              return "10px"
             } else{
               return "2px"
             }})
@@ -250,7 +282,6 @@ function familyChart() {
           if(d.type=="enemy"){
             return "2px"
           }
-          //stroke width - thicker if member/friend
           if(d.type=="member" || d.type =='friend' || d.type=='rival'){
             return "3px"
           }
@@ -270,7 +301,7 @@ function familyChart() {
           case 'partner':
             return "#ff9088";//light pink
           case 'enemy':
-            return "#83e3fe";//light blue 
+            return "#32cffc";//light blue 
           case 'rival':
             return "#9999ff";//purple
             case 'family':
